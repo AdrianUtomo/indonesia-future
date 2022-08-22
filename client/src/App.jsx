@@ -1,15 +1,11 @@
-import {Routes, Route} from "react-router-dom"
+import { Routes, Route } from "react-router-dom";
+import { Navbar } from "./layout/Navbar";
 function App() {
-
   return (
     <div className="App">
-      <Routes>
-        <h1>
-        <a href=""></a>          
-        </h1>
-      </Routes>
+      <Navbar />
     </div>
-  )
+  );
 }
 
-export default App
+export default App;

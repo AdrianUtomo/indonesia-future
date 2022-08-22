@@ -1,0 +1,64 @@
+.logo {
+  display: flex;
+  width: 100px;
+}
+.logo__img {
+  width: 100%;
+}
+
+/* Layout */
+.container {
+  height: 8vh;
+  padding: 0 5em;
+  display: flex;
+  justify-content: space-between;
+}
+
+.left {
+  display: flex;
+  align-items: center;
+  width: 30%;
+  justify-content: space-between;
+  background-color: aqua;
+}
+.menuItemsLeft {
+  display: flex;
+  justify-content: space-evenly;
+  width: 70%;
+}
+.NavLinkLeft, .NavLinkRight {
+  font-size: small;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+}
+
+.right {
+  background-color: aqua;
+  display: flex;
+  align-items: center;
+  width: 25%;
+  justify-content: space-between;
+}
+.menuItemsRight {
+  display: flex;
+  justify-content: space-between;
+  width: 40%;
+}
+
+/* Coloring */
+.container {
+  border-bottom: 2px solid var(--strokes-color);
+}
+
+.NavLinkLeft,.NavLinkRight {
+  color: var(--text-color-primary);
+  text-decoration: none;
+}
+
+.NavLinkRight:last-child {
+    border-radius: 1rem;
+    padding: .7em 1.5em;
+    background-color: red;
+    
+}

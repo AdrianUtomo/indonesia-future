@@ -1,0 +1,47 @@
+.container {
+  min-height: 100vh;
+  background-image: radial-gradient(
+      circle,
+      rgba(0, 0, 0, 0.5),
+      rgba(0, 0, 0, 0.5)
+    ),
+    url("../../../assets/backgroundLandingPage.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+.hero {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  row-gap: 4rem;
+  color: var(--text-color-white);
+}
+.heroUpper {
+  display: flex;
+  flex-direction: column;
+  row-gap: 1.5rem;
+}
+
+.hero h1 {
+  font-size: var(--dekstop-h1-size);
+}
+.hero p {
+  font-size: var(--dekstop-text-l-size);
+}
+
+.buttons {
+  display: flex;
+  column-gap: 3rem;
+}
+
+.linkLogoSagara {
+  position: relative;
+  top: 15vh;
+}
+.logoSagara {
+  width: 392px;
+}

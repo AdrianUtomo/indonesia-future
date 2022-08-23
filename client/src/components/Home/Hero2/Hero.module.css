@@ -1,0 +1,41 @@
+.redText {
+  color: var(--text-color-red);
+}
+.container {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.hero {
+  display: flex;
+  background-color: var(--color-main-black);
+  width: 80vw;
+  max-width: 1280px;
+  padding: 0.8rem;
+  border-radius: var(--border-radius-field);
+  column-gap: 3rem;
+}
+.hero img {
+  width: 55%;
+  border-radius: var(--border-radius-field);
+}
+.heroRight {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  row-gap: 2rem;
+}
+.heroRight h2 {
+  font-size: var(--dekstop-h2-size);
+}
+.heroRight p {
+  font-size: var(--dekstop-text-l-size);
+}
+.button {
+  align-self: flex-start;
+  position: relative;
+  top: 3vh;
+}

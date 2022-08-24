@@ -1,64 +1,79 @@
-.logo {
-  display: flex;
-  width: 100px;
-}
 .logo__img {
-  width: 100%;
+  width: 100px;
 }
 
 /* Layout */
+.bgContainer {
+  position: fixed;
+  left: 0;
+  right: 0;
+  background-color: transparent;
+  z-index: 10;
+}
 .container {
-  height: 8vh;
-  padding: 0 5em;
+  height: 10vh;
+  max-width: 1280px;
+  width: 95vw;
   display: flex;
   justify-content: space-between;
+  margin: 0 auto;
+}
+.underline {
+  border-bottom: 2px solid var(--strokes-color);
 }
 
 .left {
   display: flex;
   align-items: center;
-  width: 30%;
-  justify-content: space-between;
-  background-color: aqua;
+  column-gap: 2.5rem;
 }
-.menuItemsLeft {
-  display: flex;
-  justify-content: space-evenly;
-  width: 70%;
-}
-.NavLinkLeft, .NavLinkRight {
-  font-size: small;
+
+.NavLinkLeft,
+.NavLinkRight,
+.NavLinkLeftWhite,
+.NavLinkRightWhite {
+  font-size: 16px;
   font-weight: bold;
   display: flex;
   align-items: center;
+  text-decoration: none;
 }
 
 .right {
-  background-color: aqua;
   display: flex;
   align-items: center;
-  width: 25%;
-  justify-content: space-between;
-}
-.menuItemsRight {
-  display: flex;
-  justify-content: space-between;
-  width: 40%;
+  column-gap: 2rem;
 }
 
 /* Coloring */
-.container {
-  border-bottom: 2px solid var(--strokes-color);
-}
 
-.NavLinkLeft,.NavLinkRight {
+.NavLinkLeft,
+.NavLinkRight {
   color: var(--text-color-primary);
   text-decoration: none;
 }
 
-.NavLinkRight:last-child {
-    border-radius: 1rem;
-    padding: .7em 1.5em;
-    background-color: red;
-    
+.NavLinkRight:last-child,
+.NavLinkRightWhite:last-child {
+  border-radius: var(--border-radius-button);
+  padding: 0.7em 1.5em;
+  background-color: var(--color-main-red);
+  color: white;
+  font-weight: 400;
+}
+
+.bgWhite {
+  --text-color-white: black;
+  background-color: var(--color-main-white);
+}
+.bgScrolled {
+  --text-color-white: black;
+  background-color: var(--color-main-white);
+  transition: background-color 0.5s ease-out;
+}
+
+/* LandingPage Version */
+.NavLinkLeftWhite,
+.NavLinkRightWhite {
+  color: var(--text-color-white);
 }

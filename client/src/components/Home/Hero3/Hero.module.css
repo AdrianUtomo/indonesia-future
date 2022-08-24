@@ -1,0 +1,84 @@
+.redText {
+  color: var(--text-color-red);
+}
+.container {
+  min-height: 100vh;
+  background-image: radial-gradient(
+      circle,
+      rgba(0, 0, 0, 0.5),
+      rgba(0, 0, 0, 0.5)
+    ),
+    url("../../../assets/bgHero3.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+  width: 80vw;
+  max-width: 1280px;
+  column-gap: 5rem;
+}
+.heroLeft {
+  display: flex;
+  align-items: flex-start;
+  text-align: left;
+  flex-direction: column;
+  row-gap: 2rem;
+}
+
+.heroLeft h2 {
+  font-size: var(--dekstop-h2-size);
+}
+.heroLeft p {
+  font-size: var(--dekstop-text-l-size);
+}
+
+.heroRight {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  row-gap: 2rem;
+}
+
+.bgBlackSkill {
+  background-color: var(--color-main-black);
+  padding: 0.3rem 0.3rem 0.3rem 1rem;
+  border-radius: var(--border-radius-field);
+}
+.bgRedSkill {
+  background-color: var(--color-main-red);
+  border-radius: var(--border-radius-field);
+  padding: 2rem;
+}
+
+.skill {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.skill h4 {
+  font-size: var(--dekstop-subs1-size);
+
+  font-weight: 600;
+}
+.bgArrow {
+  background-color: var(--color-main-black);
+  padding: 0.3rem 0.3rem 0.3rem 1rem;
+  border-radius: var(--border-radius-checkbox);
+  display: flex;
+  align-items: center;
+  position: relative;
+  left: 3vw;
+}
+.arrowRight {
+  font-size: 2rem;
+}

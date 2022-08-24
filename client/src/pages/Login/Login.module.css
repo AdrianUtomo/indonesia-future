@@ -5,9 +5,12 @@
   text-align: center;
   width: 100%;
   font-size: 16px;
+  top: 10vh;
 }
 
 .loginForm {
+  position: relative;
+  top: 15vh;
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.15);
   padding: 20px;
 }
@@ -65,13 +68,19 @@
 .loginFormContinue {
   padding: 10px;
   font-weight: bold;
-  background: white;
   width: 100%;
-  outline: none;
+  background: white;
   border-radius: 25px;
   cursor: pointer;
   border: 2px solid #dddddd;
   margin-bottom: 15px;
+  display: flex;
+  align-items:center;
+  justify-content: center;
+}
+
+.continueIcon {
+  margin-right: 10px;
 }
 
 .signUp {
@@ -82,3 +91,4 @@
   color: #DB0A2D;
   font-weight: bolder;
 }
+

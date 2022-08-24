@@ -3,6 +3,7 @@ import LoginCSS from "./Login.module.css";
 import facebook from "../../assets/facebook.png";
 import google from "../../assets/google.png";
 import { NavLink } from "react-router-dom";
+
 export const Login = () => {
   return (
     <div className={LoginCSS.content}>
@@ -21,12 +22,12 @@ export const Login = () => {
         <button className={LoginCSS.loginFormButton}>Log in</button>
         </div>
         <h2 className={LoginCSS.loginFormOr}><span>or</span></h2>
-        <button className={LoginCSS.loginFormContinue}>Continue with Google</button>
+        <button className={LoginCSS.loginFormContinue}><img src={google} class={LoginCSS.continueIcon}></img>Continue with Google</button>
         <div>
         </div>
-        <button className={LoginCSS.loginFormContinue}>Continue with Facebook</button>
+        <button className={LoginCSS.loginFormContinue}><img src={facebook} class={LoginCSS.continueIcon}></img>Continue with Facebook</button>
         <div className={LoginCSS.signUp}>
-          Doesn't have an account? <span className={LoginCSS.link}>Sign up</span>
+          Doesn't have an account? <NavLink to={"/sign-up"} className={LoginCSS.link}>Sign up</NavLink>
         </div>
         </form>
     </div>

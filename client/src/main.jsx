@@ -5,6 +5,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { AuthProvider } from "./context/AuthProvider";
 import "../src/styles/index.css"
 import "../src/styles/colors.css"
+import { Login } from "./layout/Login";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
@@ -12,6 +13,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
       <BrowserRouter>
         <Routes>
           <Route path="/*" element={<App />} />
+          <Route path="/login" element={<Login/>}/>
         </Routes>
       </BrowserRouter>
     </AuthProvider>

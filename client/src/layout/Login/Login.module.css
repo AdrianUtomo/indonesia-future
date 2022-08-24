@@ -1,0 +1,84 @@
+.content {
+  max-width: 500px;
+  margin: auto;
+  border-radius: 5px;
+  text-align: center;
+  width: 100%;
+  font-size: 16px;
+}
+
+.loginForm {
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.15);
+  padding: 20px;
+}
+
+.loginFormTitle {
+  font-size: 32px;
+  color:#171611;
+  font-weight: bolder;
+  padding: 10px;
+  margin: 20px 0 20px 0;
+}
+
+.loginFormInput {
+  width: 100%;
+  margin-bottom: 15px;
+  padding: 10px;
+  border-radius: 12px;
+  border: 2px solid #dddddd;
+  background: #ffffff;
+  outline: none;
+  transition: border-color 0.5s;
+}
+
+.loginFormForgot {
+  text-align: right;
+  margin-bottom: 30px;
+}
+
+.loginFormOr {
+  border-bottom: 0.5px solid #8A8A8A; 
+  line-height: 0.1em;
+  margin-bottom: 30px;
+}
+
+.loginFormOr span {
+  font-size: 16px;
+  color: #8A8A8A;
+  background:#ffffff; 
+  padding:0 10px; 
+}
+
+.loginFormButton {
+  padding: 10px;
+  color: #ffffff;
+  font-weight: bold;
+  background: #D7D7D7D7;
+  width: 100%;
+  border: none;
+  outline: none;
+  border-radius: 25px;
+  cursor: pointer;
+  margin-bottom: 30px;
+}
+
+.loginFormContinue {
+  padding: 10px;
+  font-weight: bold;
+  background: white;
+  width: 100%;
+  outline: none;
+  border-radius: 25px;
+  cursor: pointer;
+  border: 2px solid #dddddd;
+  margin-bottom: 15px;
+}
+
+.signUp {
+  margin: 30px 0 30px 0;
+}
+
+.link {
+  color: #DB0A2D;
+  font-weight: bolder;
+}

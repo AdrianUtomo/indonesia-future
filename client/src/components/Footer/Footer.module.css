@@ -1,0 +1,72 @@
+.container {
+  min-height: 90vh;
+  display: flex;
+  justify-content: center;
+}
+.hero {
+  background-color: var(--color-main-black);
+  width: 80vw;
+  max-width: 1280px;
+  color: var(--color-main-white);
+  border-radius: var(--border-radius-field) var(--border-radius-field) 0 0;
+  display: flex;
+  flex-direction: column;
+  padding: 4rem 3rem;
+}
+
+.heroUpper {
+  display: flex;
+  flex-direction: column;
+  height: 60vh;
+}
+.cards {
+  display: flex;
+  width: 90%;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+.card {
+  display: flex;
+  flex-direction: column;
+  row-gap: 1rem;
+}
+.card h5 {
+  font-size: var(--dekstop-subs2-size);
+}
+
+.links {
+  display: flex;
+  flex-direction: column;
+  row-gap: 1rem;
+}
+.links a {
+  font-size: var(--dekstop-text-m-size);
+  text-decoration: none;
+  color: var(--color-main-white);
+}
+
+.sosmed {
+  color: var(--color-main-white);
+  display: flex;
+  column-gap: 1rem;
+  position: relative;
+  top: 25vh;
+}
+.sosmed a {
+  color: var(--color-main-white);
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+}
+.sosmed a img{
+    width: 30px;
+}
+
+.copyRight {
+  text-align: center;
+  position: relative;
+  top: 10vh;
+}
+.copyRight p {
+  font-size: var(--dekstop-text-s-size);
+}

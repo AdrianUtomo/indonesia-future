@@ -1,0 +1,36 @@
+.container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.slider{
+    width: 90%;
+}
+.slider div{
+    /* display: flex;
+    justify-content: center;
+    align-items: center; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.slider div img{
+    width: 120px;
+    margin: 0 auto;
+}
+.buttonContainer {
+    background-color: var(--color-main-black);
+    max-width: 60px;
+    width: 4vw;
+    border-radius: var(--border-radius-field);
+    cursor: pointer;
+    display: flex;
+  }
+  .icon {
+    color: var(--color-main-white);
+    font-size: 2.5em;
+  }
+  
+  .right {
+    justify-content: flex-end;
+  }

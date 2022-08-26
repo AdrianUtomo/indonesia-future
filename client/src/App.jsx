@@ -3,6 +3,9 @@ import { Navbar } from "./layout/Navbar";
 import { BrowseTalents } from "./pages/BrowseTalents";
 import { Home } from "./pages/Home";
 import { Login } from "./pages/Login";
+import { Join } from "./pages/Join";
+import { Register } from "./pages/Register";
+import { ForgotPassword } from "./pages/ForgotPassword";
 
 function App() {
   return (
@@ -12,6 +15,9 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/browse-talents" element={<BrowseTalents />} />
         <Route path="/login" element={<Login/>}/>
+        <Route path="/sign-up" element={<Join/>}/>
+        <Route path="/register" element={<Register/>}/>
+        <Route path="/forgot-password" element={<ForgotPassword/>}/>
       </Routes>
     </div>
   );

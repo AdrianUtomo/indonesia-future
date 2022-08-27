@@ -43,5 +43,32 @@
   top: 15vh;
 }
 .logoSagara {
-  width: 392px;
+  max-width: 392px;
+  width: 80vw;
+}
+/* Tablet */
+@media screen and (max-width: 769px) {
+  .hero h1{
+    font-size: var(--tablet-h1-size);
+  }
+  .hero p{
+    font-size: 1rem;
+  }
+}
+/* Mobile */
+@media screen and (max-width: 481px) {
+  .hero h1 {
+    font-size: var(--mobile-h1-size);
+  }
+  .hero p {
+    font-size: 0.85rem;
+  }
+  .buttons {
+    flex-direction: column;
+    width: 40vw;
+    row-gap: 1rem;
+  }
+  .buttons p {
+    font-size: 0.85em;
+  }
 }

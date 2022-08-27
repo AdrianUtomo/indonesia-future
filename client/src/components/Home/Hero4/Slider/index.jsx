@@ -22,21 +22,20 @@ export const SliderHome = () => {
     TelkomLogo,
   ];
   const settings = {
-    dots: false,
-    infinite: false,
+    infinite: true,
     speed: 500,
     slidesToShow: 5,
     slidesToScroll: 1,
     initialSlide: 0,
-    arrows: false,
+
     responsive: [
       {
         breakpoint: 1024,
         settings: {
           slidesToShow: 3,
           slidesToScroll: 3,
-          infinite: true,
-          dots: true,
+          arrows: false,
+          dots: false,
         },
       },
       {
@@ -44,7 +43,10 @@ export const SliderHome = () => {
         settings: {
           slidesToShow: 2,
           slidesToScroll: 2,
-          initialSlide: 2,
+          dots: true,
+          autoplay: true,
+          autoplaySpeed: 2000,
+          arrows: false,
         },
       },
       {
@@ -52,6 +54,10 @@ export const SliderHome = () => {
         settings: {
           slidesToShow: 1,
           slidesToScroll: 1,
+          dots: true,
+          autoplay: true,
+          autoplaySpeed: 2000,
+          arrows: false,
         },
       },
     ],

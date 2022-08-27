@@ -6,6 +6,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-bottom: 10vh;
 }
 .hero {
   min-height: 100vh;
@@ -58,4 +59,35 @@
   display: flex;
   text-align: start;
   font-size: var(--dekstop-h2-size);
+}
+/* Tablet */
+@media screen and (max-width:769px){
+  .items{
+    font-size: 1rem;
+  }
+}
+/* Mobile */
+@media screen and (max-width:480px){
+  .container{
+    min-height: 120vh;
+  }
+  .hero{
+    row-gap: 2rem;
+  }
+  .heroUpper{
+    row-gap: 3rem; 
+  }
+  .heroUpper h2, .partners h2{
+    font-size: var(--mobile-h2-size);
+  }
+  .items{
+    flex-direction: column;
+    row-gap: 1.5rem;
+  }
+  .item{
+    row-gap: 1rem;
+  }
+  .partners{
+    row-gap: 1rem;
+  }
 }

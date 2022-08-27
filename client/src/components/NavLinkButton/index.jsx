@@ -10,7 +10,7 @@ export const NavLinkButton = ({ color, path, name }) => {
         color === "red" ? `${NVLBCSS.button} ${NVLBCSS.bgRed}` : NVLBCSS.button
       }
     >
-      {name}
+      <p>{name}</p>
     </NavLink>
   );
 };

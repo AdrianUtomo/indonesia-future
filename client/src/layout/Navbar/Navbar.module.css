@@ -11,7 +11,7 @@
   z-index: 10;
 }
 .container {
-  height: 10vh;
+  height: 65.2px;
   max-width: 1280px;
   width: 95vw;
   display: flex;
@@ -53,8 +53,16 @@
   text-decoration: none;
 }
 
-.NavLinkRight:last-child,
+/* .NavLinkRight:last-child,
 .NavLinkRightWhite:last-child {
+  border-radius: var(--border-radius-button);
+  padding: 0.7em 1.5em;
+  background-color: var(--color-main-red);
+  color: white;
+  font-weight: 400;
+} */
+.NavLinkRight:nth-child(3),
+.NavLinkRightWhite:nth-child(3) {
   border-radius: var(--border-radius-button);
   padding: 0.7em 1.5em;
   background-color: var(--color-main-red);
@@ -76,4 +84,67 @@
 .NavLinkLeftWhite,
 .NavLinkRightWhite {
   color: var(--text-color-white);
+}
+
+.burgerMenu {
+  display: none;
+}
+.iconBurger {
+  font-size: 2em;
+  color: var(--color-main-black);
+}
+/* Ipads */
+.test {
+  width: 100vw;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  row-gap: 1rem;
+  padding: 1rem 2.5vw;
+  transition: all 0.5s ease;
+  position: absolute;
+  top: -250%;
+  z-index: 9;
+  border-bottom: 2px solid var(--strokes-color);
+}
+.active {
+  position: relative;
+  display: flex;
+  transition: all 0.5s ease;
+  position: absolute;
+  top: 65.2px;
+  z-index: 9;
+}
+.NavLinkAllWhiteMobile,
+.NavLinkAllMobile {
+  text-decoration: none;
+  color: var(--color-main-black);
+  font-size: 16px;
+  font-weight: 600;
+}
+.NavLinkAllMobile:hover,
+.NavLinkAllWhiteMobile:hover {
+  color: var(--color-hover-button);
+}
+@media screen and (max-width: 769px) {
+  .NavLinkLeft,
+  .NavLinkRight,
+  .NavLinkLeftWhite,
+  .NavLinkRightWhite,
+  .underline {
+    display: none;
+  }
+  .burgerMenu {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .container {
+    width: 100vw;
+    padding: 0 2.5vw;
+    background-color: var(--color-main-white);
+    position: relative;
+    z-index: 10;
+    border-bottom: 2px solid var(--strokes-color);
+  }
 }

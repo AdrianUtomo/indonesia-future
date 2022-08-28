@@ -3,7 +3,7 @@ import EmailVerificationCSS from "../LoginAndRegister/LoginAndRegister.module.cs
 import mail from "../../assets/Mail.png";
 import 'font-awesome/css/font-awesome.min.css';
 
-export const EmailVerificationCSS = () => {
+export const EmailVerification = () => {
 return (
     <div className={EmailVerificationCSS.content}>
         <form className={EmailVerificationCSS.form}>
@@ -11,7 +11,7 @@ return (
         <img src={mail}></img>
         <div>Hello there! It’s almost done! We’ve sent an email to your email for verification, please click the link we sent for verify your email.
 Thank you</div> 
-        <button className={EmailVerificationCSS.redButton}>Resend Email</button>
+        <button className={EmailVerificationCSS.button} style={{backgroundColor: '#DB0A2D'}}>Resend Email</button>
         </form>
     </div>
   );

@@ -28,7 +28,7 @@ return (
           <i className= {passwordType==="password"? "fa fa-eye-slash":"fa fa-eye"} onClick={togglePassword}></i>
           <input type={passwordType} className={LoginCSS.input} placeholder="Password" name="pass" required/>
         </div>
-        <NavLink to={"/forgot-password"} style={{textDecoration:'none'}} className={LoginCSS.forgot}>Forgot password?</NavLink>
+        <NavLink to={"/forgot-password"} className={LoginCSS.forgot} style={{textDecoration: "none"}}>Forgot password?</NavLink>
         <div>
         <button className={LoginCSS.button}>Log in</button>
         </div>
@@ -38,7 +38,7 @@ return (
         </div>
         <button className={LoginCSS.continue}><img src={facebook} class={LoginCSS.continueIcon}></img>Continue with Facebook</button>
         <div className={LoginCSS.signup}>
-          Doesn't have an account? <NavLink to={"/sign-up"} className={LoginCSS.link}>Sign up</NavLink>
+          Don't have an account? <NavLink to={"/sign-up"} className={LoginCSS.link}>Sign up</NavLink>
         </div>
         </form>
     </div>

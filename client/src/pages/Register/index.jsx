@@ -25,8 +25,8 @@ return (
         <form className={RegisterCSS.form}>
         <div className={RegisterCSS.title}>Sign up as {occupation}</div>
         <div className={RegisterCSS.fullName}>
-          <input type="text" className={RegisterCSS.inputHalf} placeholder="First name" name="first-name" required/>
-          <input type="text" className={RegisterCSS.inputHalf} placeholder="Last name" name="last-name" required/>
+          <input type="text" className={RegisterCSS.input} style={{width: '49%'}} placeholder="First name" name="first-name" required/>
+          <input type="text" className={RegisterCSS.input} style={{width: '49%'}} placeholder="Last name" name="last-name" required/>
         </div>
         <div>
           <input type="email" className={RegisterCSS.input} placeholder="Email" name="email" required/>
@@ -39,9 +39,9 @@ return (
           <i className= {passwordType==="password"? "fa fa-eye-slash":"fa fa-eye"} onClick={togglePassword}></i>
           <input type={passwordType} className={RegisterCSS.input} placeholder="Confirm Password (Re-type password)" name="pass" required/>
         </div>
-        <div>By clicking Agree &amp; Create Account, you agree to IndonesiaTalent Term of Use, User Agreement, and Privacy Policy</div> 
+        <div className={RegisterCSS.agree}>By clicking Agree &amp; Create Account, you agree to IndonesiaTalent <NavLink to={"/term-of-use"} className={RegisterCSS.link}>Term of Use</NavLink>, <NavLink to={"/user-agreement"} className={RegisterCSS.link}>User Agreement</NavLink>, and <NavLink to={"/privacy-policy"} className={RegisterCSS.link}>Privacy Policy</NavLink></div> 
         <div>
-        <button className={RegisterCSS.button}>Create account</button>
+        <NavLink to={'/email-verification'} className={RegisterCSS.button}>Create account</NavLink>
         </div>
         <h2 className={RegisterCSS.or}><span>or</span></h2>
         <button className={RegisterCSS.continue}><img src={google} class={RegisterCSS.continueIcon}></img>Continue with Google</button>

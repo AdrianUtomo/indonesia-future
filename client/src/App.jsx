@@ -6,6 +6,7 @@ import { Login } from "./pages/Login";
 import { Join } from "./pages/Join";
 import { Register } from "./pages/Register";
 import { ForgotPassword } from "./pages/ForgotPassword";
+import { EmailVerification } from "./pages/EmailVerification";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
         <Route path="/sign-up" element={<Join/>}/>
         <Route path="/register" element={<Register/>}/>
         <Route path="/forgot-password" element={<ForgotPassword/>}/>
+        <Route path="/email-verification" element={<EmailVerification/>}/>
       </Routes>
     </div>
   );

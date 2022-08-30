@@ -16,6 +16,10 @@ module.exports = (sequelize, Sequelize) => {
             type: Sequelize.STRING,
             allowNull: false
         },
+        active: {
+            type: Sequelize.BOOLEAN,
+            allowNull: false
+        }
     });
 
     return client;

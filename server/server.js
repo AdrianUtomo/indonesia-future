@@ -15,6 +15,8 @@ app.get('/', (req,res) => {
     res.send("Hello World")
 })
 
+require("./db/routes/client.route")(app);
+
 app.listen(PORT, () => {
     console.log(`Server Running at port ${PORT}`)
 })

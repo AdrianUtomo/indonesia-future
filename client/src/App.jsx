@@ -1,6 +1,7 @@
 import { Routes, Route } from "react-router-dom";
 import { Navbar } from "./layout/Navbar";
 import { BrowseTalents } from "./pages/BrowseTalents";
+import { BrowseProjects } from "./pages/BrowseProjects";
 import { Home } from "./pages/Home";
 import { Login } from "./pages/Login";
 import { Join } from "./pages/Join";
@@ -15,6 +16,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/browse-talents" element={<BrowseTalents />} />
+        <Route path="/browse-projects" element={<BrowseProjects />} />
         <Route path="/login" element={<Login/>}/>
         <Route path="/sign-up" element={<Join/>}/>
         <Route path="/register" element={<Register/>}/>

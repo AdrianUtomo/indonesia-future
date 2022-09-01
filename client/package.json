@@ -10,6 +10,7 @@
     "start": "npm run dev"
   },
   "dependencies": {
+    "@fortawesome/fontawesome-free": "^6.1.2",
     "axios": "^0.27.2",
     "font-awesome": "^4.7.0",
     "react": "^18.2.0",

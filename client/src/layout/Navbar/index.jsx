@@ -5,6 +5,7 @@ import mainLogoWhite from "../../assets/INDONESIAFUTUREWHITE.png";
 import { NavLink, useLocation } from "react-router-dom";
 import { GiHamburgerMenu } from "react-icons/gi";
 import useWindowDimensions from "../../hooks/useWindowDimensions";
+import { SearchBar } from "../../components/SearchBar";
 export const Navbar = () => {
   const [navbar, setNavbar] = useState(false);
   const { height, width } = useWindowDimensions();
@@ -60,6 +61,8 @@ export const Navbar = () => {
     }
   };
   window.addEventListener("scroll", changeBg);
+  const navbarLandingPage = `${NavbarCSS.bgContainer} ${NavbarCSS.bgScrolled}`;
+  const navbarWhite = `${NavbarCSS.bgContainer} ${NavbarCSS.bgWhite}`;
 
   return (
     <>
@@ -68,9 +71,9 @@ export const Navbar = () => {
         className={
           pathname == "/"
             ? navbar
-              ? `${NavbarCSS.bgContainer} ${NavbarCSS.bgScrolled}`
+              ? navbarLandingPage
               : NavbarCSS.bgContainer
-            : `${NavbarCSS.bgContainer} ${NavbarCSS.bgWhite}`
+            : navbarWhite
         }
       >
         <div className={NavbarCSS.container}>
@@ -90,11 +93,29 @@ export const Navbar = () => {
                 className={NavbarCSS.logo__img}
               />
             </NavLink>
-            {menuItemsLeft.map((item, i) => (
+            {width <= 769
+              ? null
+              : menuItemsLeft.map((item, i) => (
+                  <NavLink
+                    to={item.path}
+                    key={i}
+                    className={({ isActive }) =>
+                      isActive
+                        ? NavbarCSS.isActive
+                        : pathname == "/"
+                        ? NavbarCSS.NavLinkLeftWhite
+                        : NavbarCSS.NavLinkLeft
+                    }
+                  >
+                    {item.name}
+                  </NavLink>
+                ))}
+            {/* {menuItemsLeft.map((item, i) => (
               <NavLink
                 to={item.path}
                 key={i}
-                className={
+                className={({isActive})=> 
+                isActive ? NavbarCSS.isActive :
                   pathname == "/"
                     ? NavbarCSS.NavLinkLeftWhite
                     : NavbarCSS.NavLinkLeft
@@ -102,10 +123,20 @@ export const Navbar = () => {
               >
                 {item.name}
               </NavLink>
-            ))}
+            ))} */}
           </div>
           <div className={NavbarCSS.right}>
-            <div className="search-bar"></div>
+            <div
+              className={
+                pathname == "/"
+                  ? navbar
+                    ? NavbarCSS.searchBar
+                    : NavbarCSS.displayNone
+                  : NavbarCSS.searchBar
+              }
+            >
+              <SearchBar />
+            </div>
             {menuItemsRight.map((item, i) => (
               <NavLink
                 to={item.path}
@@ -138,8 +169,10 @@ export const Navbar = () => {
             <NavLink
               to={item.path}
               key={i}
-              className={
-                pathname == "/"
+              className={({ isActive }) =>
+                isActive
+                  ? NavbarCSS.isActive
+                  : pathname == "/"
                   ? NavbarCSS.NavLinkAllWhiteMobile
                   : NavbarCSS.NavLinkAllMobile
               }

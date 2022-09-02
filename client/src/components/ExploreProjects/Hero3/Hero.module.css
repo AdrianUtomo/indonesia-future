@@ -6,7 +6,6 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-bottom: 10vh;
 }
 
 
@@ -44,7 +43,9 @@
 .item p {
   font-size: var(--dekstop-text-l-size);
 }
+
 .circle {
+  display: inline-block;
   width: 30px;
   height: 30px;
   line-height: 30px;
@@ -53,6 +54,19 @@
   text-align: center;
   background: var(--color-main-red);
   margin: auto;
+  margin-bottom: -30px;
+}
+
+.line {
+  border-top: 3px dashed var(--color-main-red);
+  width: 180%;
+  margin-left: calc(51%);
+}
+
+.line2 {
+  border-top: 3px dashed var(--color-main-red);
+  width: 90%;
+  margin-left: calc(51%);
 }
 
 .or {

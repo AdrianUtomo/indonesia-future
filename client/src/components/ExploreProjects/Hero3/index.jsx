@@ -29,22 +29,50 @@ export const Hero3 = () => {
         <div className={HeroCSS.heroUpper}>
           <h2>Steps to get project</h2>
           <div className={HeroCSS.items}>
-            {items.slice(0,3).map((item, i) => (
-              <div className={HeroCSS.item} key={i}>
+            {items.slice(0,3).map((item, i) =>  {
+              if(i==0) {
+              return (
+                <div className={HeroCSS.item} key={i}>
                 <p className={HeroCSS.circle}>{i+1}</p>
+                <div className={HeroCSS.line}></div>
                 <p style={{fontWeight:"bold"}}>{item.title}</p>
                 <p>{item.text}</p>
               </div>
-              ))}
+              )}
+              else {
+                return (
+                  <div className={HeroCSS.item} key={i}>
+                    <p className={HeroCSS.circle}>{i+1}</p>
+                    <div></div>
+                    <p style={{fontWeight:"bold"}}>{item.title}</p>
+                    <p>{item.text}</p>
+                  </div>
+                  )           
+              }
+              })}
           </div>
           <div className={HeroCSS.items}>
-            {items.slice(3,5).map((item, i) => (
-              <div className={HeroCSS.item} key={i}>
-                <p className={HeroCSS.circle}>{i+4}</p>
-                <p style={{fontWeight:"bold"}}>{item.title}</p>
-                <p>{item.text}</p>
-              </div>
-              ))}
+            {items.slice(3,5).map((item, i) => {
+              if(i==0) {
+                return (
+                  <div className={HeroCSS.item} key={i}>
+                  <p className={HeroCSS.circle}>{i+4}</p>
+                  <div className={HeroCSS.line2}></div>
+                  <p style={{fontWeight:"bold"}}>{item.title}</p>
+                  <p>{item.text}</p>
+                </div>
+                )}
+                else {
+                  return (
+                    <div className={HeroCSS.item} key={i}>
+                      <p className={HeroCSS.circle}>{i+4}</p>
+                      <div></div>
+                      <p style={{fontWeight:"bold"}}>{item.title}</p>
+                      <p>{item.text}</p>
+                    </div>
+                    )           
+                }
+              })}
           </div>
         </div>
       </div>

@@ -8,6 +8,9 @@ import { Join } from "./pages/Join";
 import { Register } from "./pages/Register";
 import { ForgotPassword } from "./pages/ForgotPassword";
 import { EmailVerification } from "./pages/EmailVerification";
+import { Category } from "./pages/BrowseProjects/Category";
+import { NotFound } from "./pages/404NotFound";
+import { Talents } from "./pages/BrowseProjects/Talent";
 
 function App() {
   return (
@@ -16,12 +19,16 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/browse-talents" element={<BrowseTalents />} />
+        <Route path="/browse-talents/category" element={<Category />} />
+        <Route path="/browse-talents/category/:talent" element={<Talents />} />
         <Route path="/browse-projects" element={<BrowseProjects />} />
-        <Route path="/login" element={<Login/>}/>
-        <Route path="/sign-up" element={<Join/>}/>
-        <Route path="/register" element={<Register/>}/>
-        <Route path="/forgot-password" element={<ForgotPassword/>}/>
-        <Route path="/email-verification" element={<EmailVerification/>}/>
+        <Route path="/login" element={<Login />} />
+        <Route path="/sign-up" element={<Join />} />
+        <Route path="/register" element={<Register />} />
+        <Route path="/forgot-password" element={<ForgotPassword />} />
+        <Route path="/email-verification" element={<EmailVerification />} />
+        <Route path="/NotFound" element={<NotFound />} />
+        <Route path="*" element={<NotFound />} />
       </Routes>
     </div>
   );

@@ -8,9 +8,9 @@ import { Join } from "./pages/Join";
 import { Register } from "./pages/Register";
 import { ForgotPassword } from "./pages/ForgotPassword";
 import { EmailVerification } from "./pages/EmailVerification";
-import { Category } from "./pages/BrowseProjects/Category";
+import { Category } from "./pages/BrowseTalents/Category";
 import { NotFound } from "./pages/404NotFound";
-import { Talents } from "./pages/BrowseProjects/Talent";
+import { Talents } from "./pages/BrowseTalents/Talent";
 
 function App() {
   return (

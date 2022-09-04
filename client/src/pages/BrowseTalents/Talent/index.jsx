@@ -6,7 +6,7 @@ import { Hero1 } from "../../../components/BrowseTalents/Talent/Hero1";
 import { Footer } from "../../../components/Footer";
 export const Talents = () => {
   const params = useParams();
-  const talentCategory = params.talent;
+  let talentCategory = params.talent;
   const strictLink = [
     "Development&IT",
     "Design&Creative",
@@ -15,18 +15,21 @@ export const Talents = () => {
   ];
   const linkInclude = strictLink.includes(talentCategory);
   let navigate = useNavigate();
-  const routeToNotFound = () => {
-    if (!linkInclude) {
-      navigate("/NotFound");
-    }
-  };
+  if (!linkInclude) {
+    talentCategory = "Development&IT";
+  }
   useEffect(() => {
-    routeToNotFound();
+    if (!linkInclude) {
+      const nav = () => {
+        navigate("/NotFound");
+      };
+      nav();
+    }
   }, []);
   return (
     <div className={TCSS.container}>
       <Hero1 talent={talentCategory} />
-      <Footer/>
+      <Footer />
     </div>
   );
 };

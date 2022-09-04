@@ -64,7 +64,6 @@ export const Navbar = () => {
   window.addEventListener("scroll", changeBg);
   const navbarLandingPage = `${NavbarCSS.bgContainer} ${NavbarCSS.bgScrolled}`;
   const navbarWhite = `${NavbarCSS.bgContainer} ${NavbarCSS.bgWhite}`;
-
   return (
     <>
       <div
@@ -101,7 +100,7 @@ export const Navbar = () => {
                     to={item.path}
                     key={i}
                     className={({ isActive }) =>
-                      isActive && arrayMenu.includes(location)
+                      isActive && arrayMenu.includes(pathname)
                         ? NavbarCSS.isActive
                         : pathname == "/"
                         ? NavbarCSS.NavLinkLeftWhite
@@ -157,7 +156,7 @@ export const Navbar = () => {
               to={item.path}
               key={i}
               className={({ isActive }) =>
-                isActive && arrayMenu.includes(location)
+                isActive && arrayMenu.includes(pathname)
                   ? NavbarCSS.isActive
                   : pathname == "/"
                   ? NavbarCSS.NavLinkAllWhiteMobile

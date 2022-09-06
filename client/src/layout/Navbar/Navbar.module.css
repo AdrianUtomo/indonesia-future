@@ -79,6 +79,12 @@
   background-color: var(--color-main-white);
   transition: background-color 0.5s ease-out;
 }
+.searchBar {
+  color: white;
+}
+.displayNone {
+  display: none;
+}
 
 /* LandingPage Version */
 .NavLinkLeftWhite,
@@ -147,4 +153,10 @@
     z-index: 10;
     border-bottom: 2px solid var(--strokes-color);
   }
+}
+.isActive {
+  color: var(--color-main-red);
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: bold;
 }

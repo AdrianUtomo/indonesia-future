@@ -1,3 +1,4 @@
+const sendEmail = require("../../service/sendEmail")
 const db = require('../models')
 const Client = db.client;
 const Bcrypt = require('bcrypt')
@@ -19,7 +20,13 @@ exports.create = (req,res) => {
 
     Client.create(client)
         .then(data => {
-            res.send(data)
+            console.log(data.email)
+            const result = sendEmail.sendEmail(data.email) 
+            if(result == 0){
+                res.send("Error")
+            } else {
+                res.send("success")
+            }
         })
         .catch(err => {
             res.status(500).send({
@@ -57,5 +64,9 @@ exports.deleteAll = (req, res) => {
                     err.message || "Some error occured"
             });
         });
+}
+
+exports.verifyEmail = (req,res) => {
+    res.send(req.query.email)
 }
 

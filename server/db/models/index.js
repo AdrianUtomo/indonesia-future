@@ -29,6 +29,7 @@ db.Sequelize = Sequelize;
 db.sequelize = sequelize;
 
 db.client = require('./client.model.js')(sequelize, Sequelize);
+db.verification = require('./verification.model.js')(sequelize, Sequelize)
 
 module.exports = db;
 

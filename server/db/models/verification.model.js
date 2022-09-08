@@ -1,5 +1,5 @@
 module.exports = (sequelize, Sequelize) => {
-    const verification = sequelize.define("client", {
+    const verification = sequelize.define("verification", {
         email: {
             type: Sequelize.STRING,
             allowNull: false

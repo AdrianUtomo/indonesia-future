@@ -8,16 +8,16 @@
     },
     "test": {
       "username": "rehagana16",
-      "password": "32rkcsembiring",
+      "password": "32Rkcsembiring",
       "database": "indonesia_future",
-      "host": "localhost",
+      "host": "34.87.96.37", 
       "dialect": "mysql"
     },
     "production": {
       "username": "root",
-      "password": null,
-      "database": "database_production",
-      "host": "127.0.0.1",
+      "password": "KUPBCP9XjZFM6CYouElF",
+      "database": "railway",
+      "host": "containers-us-west-77.railway.app",
       "dialect": "mysql"
     }
   }

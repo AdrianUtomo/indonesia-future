@@ -67,6 +67,8 @@ exports.deleteAll = (req, res) => {
 }
 
 exports.verifyEmail = (req,res) => {
-    res.send(req.query.email)
+    const email = req.query.email;
+    Client.update({active: true}, {where: {email: email}})
+    res.send("Update Complete")
 }
 

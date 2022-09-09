@@ -43,16 +43,16 @@ return (
             <input type="radio" id="client" name="occupation" value="client" onClick={() => chooseClient()}></input>
             <label htmlFor="client">
             <div></div>
-            <img src={clientPic}></img>
-            <div>I want to hire a talent for project</div>    
+            <img src={clientPic} className={JoinCSS.pic}></img>
+            I want to hire a talent for project   
             </label> 
             </div> 
             <div className={JoinCSS.box} style={{borderColor:freelancerBorderColor, width:"110%"}}>
             <input type="radio" id="freelancer" name="occupation" value="freelancer" onClick={() => chooseFreelancer()}></input>
             <label htmlFor="freelancer"> 
             <div></div>  
-            <img src={freelancerPic}></img>
-            <div>I want to work on a project</div>
+            <img src={freelancerPic} className={JoinCSS.pic}></img>
+            I want to work on a project
             </label>
             </div> 
         </div>

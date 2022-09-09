@@ -139,6 +139,10 @@
     width: 120%;
   }
 
+  .pic {
+    margin-left: 65px;
+  }
+
   input[type='radio'] {
     accent-color: #DB0A2D;
     display: inline-block;

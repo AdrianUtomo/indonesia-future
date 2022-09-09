@@ -4,8 +4,8 @@
 }
 .hero {
   min-height: 50vh;
-  display: flex;
-  flex-direction: row;
+  display: inline-block;
+  column-count: 2;
   align-items: left;
   justify-content: center;
   text-align: left;
@@ -30,11 +30,15 @@
 }
 .headline h1 {
   font-size: var(--dekstop-subs2-size);
-  width: 200%;
 }
 
 .icon {
   color: #8A8A8A;
+  font-size:1em;
+}
+
+.arrowIcon {
+  background-color: var(--color-main-red);
   font-size:1em;
 }
 
@@ -52,28 +56,17 @@
   color: white;
 }
 
-.detail p {
-  width: 200%;
-}
-
 .inline {
   display: inline-block;
   column-count: 2;
   column-gap: 1rem;
 }
 
-
-.right {
-  justify-content: center;
-  color: white;
-  margin-left: 300px;
-}
-
 .available {
   height: fit-content;
   width: fit-content;
   padding: 10px;
-  margin: 0px 0px 30px 310px;
+  margin: 0 0 10px 350px;
   color: var(--color-main-red);
   font-weight: 600;
   border: 1px solid var(--color-main-red);
@@ -115,13 +108,13 @@
   background: linear-gradient(to right, var(--color-main-red) 16%, #D7D7D7 16%);
 }
 
-.addPercentage {
+.add {
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.05);
   border-color: transparent;
   border: 2px solid #dddddd;
   border-radius: 12px;
-  padding: 1.5vw;
-  margin: 15px;
+  padding: 1vw;
+  margin: 1vw;
 }
 
 .linkLogoSagara {

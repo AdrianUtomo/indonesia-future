@@ -11,6 +11,7 @@ import { EmailVerification } from "./pages/EmailVerification";
 import { Category } from "./pages/BrowseTalents/Category";
 import { NotFound } from "./pages/404NotFound";
 import { Talents } from "./pages/BrowseTalents/Talent";
+import { SearchPage } from "./pages/Search";
 
 function App() {
   return (
@@ -27,6 +28,7 @@ function App() {
         <Route path="/register" element={<Register />} />
         <Route path="/forgot-password" element={<ForgotPassword />} />
         <Route path="/email-verification" element={<EmailVerification />} />
+        <Route path="/search" element={<SearchPage/>}/>
         <Route path="/NotFound" element={<NotFound />} />
         <Route path="*" element={<NotFound />} />
       </Routes>

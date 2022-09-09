@@ -2,8 +2,22 @@ import React from "react";
 import { NavLinkButton } from "../../NavLinkButton";
 import HeroCSS from "./Hero.module.css";
 import { FiArrowRight } from "react-icons/fi";
+import { CategoryLinkButton } from "../../CategoryLinkButton";
 export const Hero3 = () => {
-  const skills = ["Development & T1", "Design & Creative", "Digital Marketing"];
+  const skills = [
+    {
+      name: "Development & IT",
+      path: "Development&IT",
+    },
+    {
+      name: "Design & Creative",
+      path: "Design&Creative",
+    },
+    {
+      name: "Digital Marketing",
+      path: "DigitalMarketing",
+    },
+  ];
   return (
     <div className={HeroCSS.container}>
       <div className={HeroCSS.hero}>
@@ -27,16 +41,10 @@ export const Hero3 = () => {
         </div>
         <div className={HeroCSS.heroRight}>
           {skills.map((skill, i) => (
-            <div className={HeroCSS.bgBlackSkill} key={i}>
-              <div className={HeroCSS.bgRedSkill}>
-                <div className={HeroCSS.skill}>
-                  <h4>{skill}</h4>
-                  <div className={HeroCSS.bgArrow}>
-                    <FiArrowRight className={HeroCSS.arrowRight} />
-                  </div>
-                </div>
-              </div>
-            </div>
+            <CategoryLinkButton
+              name={skill.name} key={i}
+              path={"/browse-talents/category/" + skill.path}
+            />
           ))}
         </div>
       </div>

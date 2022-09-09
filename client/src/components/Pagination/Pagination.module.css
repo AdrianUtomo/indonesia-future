@@ -1,0 +1,39 @@
+.container {
+  display: flex;
+  align-items: center;
+  column-gap: 0.8rem;
+  flex-wrap: wrap;
+}
+
+.pointPages {
+  display: flex;
+  column-gap: 0.7rem;
+}
+.pointPages a {
+  display: flex;
+  justify-content: center;
+  width: 20px;
+  font-weight: 600;
+  font-size: var(--dekstop-text-s-size);
+}
+.pointPages a:first-child {
+  background-color: var(--color-main-red);
+  color: var(--color-main-white);
+}
+.changePage button {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  column-gap: 0.8rem;
+  color: var(--color-main-red);
+}
+.changePage button p {
+  font-size: var(--dekstop-text-m-size);
+  font-weight: 600;
+}
+.arrowIcon {
+  font-size: 1.5rem;
+}
+.changePage button:first-child {
+  color: var(--strokes-color);
+}

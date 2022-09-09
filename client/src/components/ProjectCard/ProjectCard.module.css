@@ -1,0 +1,129 @@
+.card {
+  padding: 1rem 1rem 1rem 1rem;
+  display: flex;
+  flex-direction: column;
+  border-bottom: 1px solid var(--color-font-disabled);
+  row-gap: 0.8rem;
+}
+.header {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+.header h5 {
+  font-size: 16px;
+  font-weight: 700;
+}
+.displayTime {
+  display: flex;
+  align-items: center;
+  column-gap: 1rem;
+  width: 20%;
+}
+.displayTime .icon {
+  font-size: 1.3rem;
+  color: var(--color-font-disabled);
+}
+.displayTime p {
+  color: var(--color-font-disabled);
+  font-size: 14px;
+}
+.detail {
+  display: flex;
+  align-items: center;
+  column-gap: 0.4rem;
+}
+.detail p {
+  font-size: 14px;
+}
+.detail p:first-child {
+  font-weight: 700;
+}
+
+.skills {
+  display: flex;
+  column-gap: 0.5rem;
+  flex-wrap: wrap;
+  row-gap: 0.5rem;
+}
+.mobileDisplay {
+  display: none;
+}
+/* Tablet */
+@media screen and (max-width: 769px) {
+  .card {
+    row-gap: 0.5rem;
+  }
+  .description {
+    display: none;
+  }
+  .header {
+    flex-direction: column;
+  }
+  .header h5 {
+    font-size: 1.2rem;
+  }
+  .detail {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .detail p {
+    font-size: 0.9rem;
+  }
+  .detail p:nth-last-of-type(2) {
+    display: none;
+  }
+  .detail span {
+    display: none;
+  }
+  .displayTime,
+  .icon {
+    display: none;
+  }
+  .mobileDisplay {
+    width: 100%;
+    display: flex;
+  }
+}
+
+/* Mobile */
+@media screen and (max-width: 481px) {
+  .skills {
+    display: none;
+  }
+  .card {
+    row-gap: 0.5rem;
+  }
+  .description {
+    display: none;
+  }
+  .header {
+    flex-direction: column;
+  }
+  .header h5 {
+    font-size: 1.2rem;
+  }
+  .detail {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .detail p {
+    font-size: 0.9rem;
+  }
+  .detail p:nth-last-of-type(2) {
+    display: none;
+  }
+  .detail span {
+    display: none;
+  }
+  .displayTime,
+  .icon {
+    display: none;
+  }
+  .mobileDisplay {
+    width: 100%;
+    display: flex;
+  }
+}

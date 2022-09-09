@@ -2,6 +2,8 @@ const sendEmail = require("../../service/sendEmail")
 const db = require('../models')
 const Client = db.client;
 const Bcrypt = require('bcrypt')
+const jwt = require('jsonwebtoken')
+const accessTokenSecret = "youraccesstokensecret";
 const Op = db.Sequelize.Op;
 
 exports.create = (req,res) => {
@@ -46,6 +48,32 @@ exports.findAll = (req,res) => {
                 message:
                     err.message || " Some error occured"
             });
+        });
+};
+
+exports.findOne = (req,res) => {
+    const email = req.body.email;
+    const password = req.body.password;
+
+    Client.findOne({where: {email: email, active: true}})
+        .then((data) => {
+            Bcrypt.compare(password, data.password)
+                .then(() => {
+                    const accessToken = jwt.sign({
+                        "email" : data.email,
+                        "firstname" : data.firstname,
+                        "lastname": data.lastname
+                    }, accessTokenSecret);
+                    res.send(accessToken);
+                })
+                .catch(err => {
+                    console.log('ERROR')
+                    res.send(err.message)
+                })
+        })
+        .catch(err=> { //username salah
+            console.log("ERROR")
+            res.send(err.message)
         });
 };
 

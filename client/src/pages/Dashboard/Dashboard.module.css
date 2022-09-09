@@ -1,0 +1,14 @@
+::-webkit-scrollbar {
+  display: none;
+}
+.container {
+  -ms-overflow-style: none;
+}
+.detail {
+  display: inline-block;
+  column-count: 2;
+}
+.header {
+  display: inline-block;
+  column-count: 2; 
+}

@@ -8,8 +8,13 @@ import { Join } from "./pages/Join";
 import { Register } from "./pages/Register";
 import { ForgotPassword } from "./pages/ForgotPassword";
 import { EmailVerification } from "./pages/EmailVerification";
+import { Category } from "./pages/BrowseTalents/Category";
+import { NotFound } from "./pages/404NotFound";
+import { Talents } from "./pages/BrowseTalents/Talent";
+import { SearchPage } from "./pages/Search";
 import { Profile } from "./pages/Profile";
 import { Dashboard } from "./pages/Dashboard";
+
 
 function App() {
   return (
@@ -18,6 +23,8 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/browse-talents" element={<BrowseTalents />} />
+        <Route path="/browse-talents/category" element={<Category />} />
+        <Route path="/browse-talents/category/:talent" element={<Talents />} />
         <Route path="/browse-projects" element={<BrowseProjects />} />
         <Route path="/login" element={<Login/>}/>
         <Route path="/sign-up" element={<Join/>}/>

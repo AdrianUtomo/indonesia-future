@@ -30,6 +30,7 @@ export const Navbar = () => {
   let domNode = useClickOutside(() => {
     setMobileMenu(false);
   });
+  const arrayMenu = ["/browse-talents", "/browse-projects"];
   const menuItemsLeft = [
     {
       path: "/browse-talents",
@@ -63,7 +64,6 @@ export const Navbar = () => {
   window.addEventListener("scroll", changeBg);
   const navbarLandingPage = `${NavbarCSS.bgContainer} ${NavbarCSS.bgScrolled}`;
   const navbarWhite = `${NavbarCSS.bgContainer} ${NavbarCSS.bgWhite}`;
-
   return (
     <>
       <div
@@ -100,7 +100,7 @@ export const Navbar = () => {
                     to={item.path}
                     key={i}
                     className={({ isActive }) =>
-                      isActive
+                      isActive && arrayMenu.includes(pathname)
                         ? NavbarCSS.isActive
                         : pathname == "/"
                         ? NavbarCSS.NavLinkLeftWhite
@@ -110,20 +110,6 @@ export const Navbar = () => {
                     {item.name}
                   </NavLink>
                 ))}
-            {/* {menuItemsLeft.map((item, i) => (
-              <NavLink
-                to={item.path}
-                key={i}
-                className={({isActive})=> 
-                isActive ? NavbarCSS.isActive :
-                  pathname == "/"
-                    ? NavbarCSS.NavLinkLeftWhite
-                    : NavbarCSS.NavLinkLeft
-                }
-              >
-                {item.name}
-              </NavLink>
-            ))} */}
           </div>
           <div className={NavbarCSS.right}>
             <div
@@ -170,7 +156,7 @@ export const Navbar = () => {
               to={item.path}
               key={i}
               className={({ isActive }) =>
-                isActive
+                isActive && arrayMenu.includes(pathname)
                   ? NavbarCSS.isActive
                   : pathname == "/"
                   ? NavbarCSS.NavLinkAllWhiteMobile

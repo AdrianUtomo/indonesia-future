@@ -6,6 +6,7 @@ module.exports = app => {
     router.post("/", client.create);
     router.delete("/", client.deleteAll);
     router.get("/", client.findAll);
+    router.post("/verify-email/", client.verifyEmail)
 
     app.use('/api/client', router)
 }

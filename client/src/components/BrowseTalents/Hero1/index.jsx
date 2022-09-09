@@ -10,17 +10,20 @@ export const Hero1 = () => {
         <div className={HeroCSS.heroLeft}>
           <h2>
             We provide
-            <br/> <span className={HeroCSS.redText}>best tech talent</span>{" "}
-            <br/>
+            <br /> <span className={HeroCSS.redText}>
+              best tech talent
+            </span>{" "}
+            <br />
             for your company
           </h2>
           <p style={{ color: "black" }}>
-          Find technology talent that suits your company's needs, we provide various skills for your company's project needs
+            Find technology talent that suits your company's needs, we provide
+            various skills for your company's project needs
           </p>
           <div className={HeroCSS.button}>
             <NavLinkButton
               color={"red"}
-              path={"/browse-talents"}
+              path={"/browse-talents/category"}
               name={"Browse Talent"}
             />
           </div>

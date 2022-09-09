@@ -1,0 +1,17 @@
+.container {
+  border: 2px solid var(--color-main-red);
+  display: flex;
+  border-radius: var(--border-radius-button);
+  padding: 0.2rem 0.5rem;
+  color: var(--color-main-red);
+  cursor: default;
+  
+}
+.container:hover {
+  background-color: var(--color-main-red);
+  color: var(--color-main-white);
+}
+.container p {
+  font-size: 12px;
+  font-weight: 600;
+}

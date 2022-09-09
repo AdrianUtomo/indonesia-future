@@ -11,6 +11,10 @@ import { EmailVerification } from "./pages/EmailVerification";
 import { Category } from "./pages/BrowseTalents/Category";
 import { NotFound } from "./pages/404NotFound";
 import { Talents } from "./pages/BrowseTalents/Talent";
+import { SearchPage } from "./pages/Search";
+import { Profile } from "./pages/Profile";
+import { Dashboard } from "./pages/Dashboard";
+
 
 function App() {
   return (
@@ -22,13 +26,13 @@ function App() {
         <Route path="/browse-talents/category" element={<Category />} />
         <Route path="/browse-talents/category/:talent" element={<Talents />} />
         <Route path="/browse-projects" element={<BrowseProjects />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/sign-up" element={<Join />} />
-        <Route path="/register" element={<Register />} />
-        <Route path="/forgot-password" element={<ForgotPassword />} />
-        <Route path="/email-verification" element={<EmailVerification />} />
-        <Route path="/NotFound" element={<NotFound />} />
-        <Route path="*" element={<NotFound />} />
+        <Route path="/login" element={<Login/>}/>
+        <Route path="/sign-up" element={<Join/>}/>
+        <Route path="/register" element={<Register/>}/>
+        <Route path="/forgot-password" element={<ForgotPassword/>}/>
+        <Route path="/email-verification" element={<EmailVerification/>}/>
+        <Route path="/profile" element={<Profile/>}/>
+        <Route path="/dashboard" element={<Dashboard/>}/>
       </Routes>
     </div>
   );

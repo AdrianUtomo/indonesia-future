@@ -26,6 +26,7 @@ export const Talents = () => {
       nav();
     }
   }, []);
+
   return (
     <div className={TCSS.container}>
       <Hero1 talent={talentCategory} />

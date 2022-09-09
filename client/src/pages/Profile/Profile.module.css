@@ -1,0 +1,19 @@
+::-webkit-scrollbar {
+  display: none;
+}
+.container {
+  -ms-overflow-style: none;
+}
+.detail {
+  display: flex;
+  justify-content: center;
+  text-align: center; 
+}
+.header {
+  justify-content: space-evenly;
+  align-items: center;
+  text-align: center;
+}
+.content {
+  display: inline-block;
+}

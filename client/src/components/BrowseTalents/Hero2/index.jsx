@@ -4,10 +4,22 @@ import imageHero2 from "../../../assets/imgHero2BrowseTalents.jpg";
 import { NavLinkButton } from "../../NavLinkButton";
 export const Hero2 = () => {
   const buttons = [
-    { name: "Development & IT", path: "development-it" },
-    { name: "Design & Creative", path: "design-creative" },
-    { name: "Digital Marketing", path: "digital-marketing" },
-    { name: "Augmented Reality", path: "augmented-reality" }
+    {
+      name: "Development & IT",
+      path: "Development&IT",
+    },
+    {
+      name: "Design & Creative",
+      path: "Design&Creative",
+    },
+    {
+      name: "Digital Marketing",
+      path: "DigitalMarketing",
+    },
+    {
+      name: "Augmented Reality",
+      path: "AugmentedReality",
+    },
   ];
   return (
     <div className={HeroCSS.container}>
@@ -23,14 +35,14 @@ export const Hero2 = () => {
             Designer, Data Analyst, and many else.
           </p>
           <div className={HeroCSS.button}>
-            {buttons.map((button,i)=>(
-              <NavLinkButton key={i}
-              color={""}
-              path={button.path}
-              name={button.name}
-            />
+            {buttons.map((button, i) => (
+              <NavLinkButton
+                key={i}
+                color={""}
+                path={"category/" + button.path}
+                name={button.name}
+              />
             ))}
-            
           </div>
         </div>
       </div>

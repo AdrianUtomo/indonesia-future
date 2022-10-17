@@ -8,9 +8,9 @@
     },
     "test": {
       "username": "rehagana16",
-      "password": "32Rkcsembiring",
+      "password": "32rkcsembiring",
       "database": "indonesia_future",
-      "host": "34.87.96.37", 
+      "host": "localhost", 
       "dialect": "mysql"
     },
     "production": {

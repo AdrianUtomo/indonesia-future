@@ -9,19 +9,19 @@ let dbTest = dbConfig.test
 let dbDev = dbConfig.production
 
 //create database named "indonesia_future" first
-// const sequelize = new Sequelize (dbTest.database, dbTest.username, dbTest.password, {
-//     host : dbTest.host,
-//     dialect : dbTest.dialect,
-//     operatorsAliases : false, 
+const sequelize = new Sequelize (dbTest.database, dbTest.username, dbTest.password, {
+    host : dbTest.host,
+    dialect : dbTest.dialect,
+    operatorsAliases : false, 
 
-// });
-
-const sequelize = new Sequelize (dbDev.database, dbDev.username, dbDev.password, {
-    host : dbDev.host,
-    dialect : dbDev.dialect,
-    port : 7496,
-    operatorsAliases : false,
 });
+
+// const sequelize = new Sequelize (dbDev.database, dbDev.username, dbDev.password, {
+//     host : dbDev.host,
+//     dialect : dbDev.dialect,
+//     port : 7496,
+//     operatorsAliases : false,
+// });
 
 
 const db = {};

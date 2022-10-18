@@ -2,6 +2,7 @@ import React from "react";
 import RegisterCSS from "../LoginAndRegister/LoginAndRegister.module.css";
 import facebook from "../../assets/facebook.png";
 import google from "../../assets/google.png";
+import axios from 'axios';
 import { NavLink, useLocation, useNavigate } from "react-router-dom";
 import { useState } from "react";
 import 'font-awesome/css/font-awesome.min.css';
@@ -14,7 +15,7 @@ export const Register = () => {
   const isEmail = (email) =>
   /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(email);
   const [passwordType, setPasswordType] = useState("password");
-  const [values, setValues] = useState({email:"", password:"",retyped_password:""})
+  const [values, setValues] = useState({firstname:"", lastname:"", email:"", password:"",retyped_password:""})
   const [errors, setErrors] = useState({})
   const [errorMessage, setErrorMessage] = useState("")
   const togglePassword =()=>{
@@ -38,18 +39,23 @@ export const Register = () => {
       errors.password_length = "Password is less than 6 characters"
     }
 
-          if (values.password!=values.retyped_password) {
-        errors.retyped_password = "Password does not match"
-      }
- 
+    if (values.password!=values.retyped_password) {
+      errors.retyped_password = "Password does not match"
+    }
     setErrors(errors);
  
     if (!Object.keys(errors).length) {
-      navigate('/email-verification')
+      submit()
     }
     else {
       setErrorMessage(Object.entries(errors).at(0)[1])
     }
+  };
+  const setFirstName = (e) => {
+    setValues((values) => ({ ...values, firstname: e.target.value }));
+  };
+  const setLastName = (e) => {
+    setValues((values) => ({ ...values, lastname: e.target.value }));
   };
   const setEmail = (e) => {
     setValues((values) => ({ ...values, email: e.target.value }));
@@ -60,15 +66,33 @@ export const Register = () => {
   const setRetypedPassword = (e) => {
     setValues((values) => ({ ...values, retyped_password: e.target.value }));
   };
-
-
+  const submit = () => {
+    const userObject = {
+        firstname: values.firstname,
+        lastname: values.lastname,
+        email: values.email,
+        password: values.password
+    };
+    axios.post('http://localhost:8080/api/client', userObject)
+        .then((res) => {
+          navigate('/email-verification');
+        }).catch((error) => {
+            console.log(error)
+        });
+  }
 return (
     <div className={RegisterCSS.content}>
         <form className={RegisterCSS.form} onSubmit={validateAndSubmitForm}>
         <div className={RegisterCSS.title}>Sign up as {occupation}</div>
         <div className={RegisterCSS.fullName}>
-          <input type="text" className={RegisterCSS.input} style={{width: '49%'}} placeholder="First name" name="first-name" required/>
-          <input type="text" className={RegisterCSS.input} style={{width: '49%'}} placeholder="Last name" name="last-name" required/>
+          <input type="text" className={RegisterCSS.input} style={{width: '49%'}} placeholder="First name" name="first-name"
+          value={values.firstname}
+          onChange={setFirstName}
+          required/>
+          <input type="text" className={RegisterCSS.input} style={{width: '49%'}} placeholder="Last name" name="last-name"
+          value={values.lastname}
+          onChange={setLastName}
+          required/>
         </div>
         <div>
           <input type="text" className={RegisterCSS.input} placeholder="Email" name="email" 

@@ -9,6 +9,8 @@ app.use(bodyParser.json());
 
 app.use(bodyParser.urlencoded({ extended : true }))
 
+app.use(cors())
+
 db.sequelize.sync();
 
 app.get('/', (req,res) => {

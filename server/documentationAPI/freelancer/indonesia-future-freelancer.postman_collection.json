@@ -1,0 +1,109 @@
+{
+	"info": {
+		"_postman_id": "931b35e5-355a-4644-950e-10f1d2e7c4a7",
+		"name": "indonesia-future-freelancer",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "15333745"
+	},
+	"item": [
+		{
+			"name": "Register freelancer",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"firstname\" : \"Test 1\",\r\n    \"lastname\" : \"Test 2\",\r\n    \"email\" : \"rehaganak@gmail.com\",\r\n    \"password\" : \"32rkcsembiring\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/freelancer",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"freelancer"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete All freelancer",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/freelancer",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"freelancer"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get All Freelancer",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/freelancer",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"freelancer"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login Freelancer",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\" : \"rehaganak@gmail.com\",\r\n    \"password\" : \"32Rkcsembiring\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/freelancer/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"freelancer",
+						"login"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

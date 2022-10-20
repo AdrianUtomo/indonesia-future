@@ -18,6 +18,7 @@ app.get('/', (req,res) => {
 })
 
 require("./db/routes/client.route")(app);
+require("./db/routes/freelancer.route")(app);
 
 app.listen(PORT, () => {
     console.log(`Server Running at port ${PORT}`)

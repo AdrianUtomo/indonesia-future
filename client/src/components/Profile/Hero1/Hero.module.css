@@ -35,6 +35,7 @@
 .icon {
   color: #8A8A8A;
   font-size:1em;
+  display: inline-block;
 }
 
 .arrowIcon {
@@ -49,11 +50,17 @@
   color: white;
 } 
 
+
 .detail {
   display: inline-block;
   column-count: 2;
   justify-content: center;
   color: white;
+}
+
+.edit{
+  display: inline-block;
+  column-count: 2;
 }
 
 .inline {

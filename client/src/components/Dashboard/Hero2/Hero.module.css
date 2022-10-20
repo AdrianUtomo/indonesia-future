@@ -1,6 +1,6 @@
 .container {
-  display: flex;
   justify-content: center;
+  margin: 0 10vw 0 10vw;
 }
 .hero {
   display: flex;
@@ -16,6 +16,9 @@
 }
 .hero p {
   color: black;
+}
+.recentSearch {
+  color: var(--color-main-red);
 }
 /* Tablet */
 @media screen and (max-width: 769px) {

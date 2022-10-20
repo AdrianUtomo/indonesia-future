@@ -15,8 +15,8 @@ import { Pagination } from "../../Pagination";
 export const Hero1 = () => {
   const [searchParams, setSearchParams] = useSearchParams();
   const [categoryProject, setCategoryProject] = useState(true);
-  const { data, query, plainData } = useContext(ProjectTalentContext);
-  const [pData, setPData] = useState(data);
+  const { pData, query, plainpData } = useContext(ProjectTalentContext);
+  const [data, setData] = useState(pData);
   const q = searchParams.get("q") || "";
   const c = searchParams.get("c") || "";
   const cSplitted = c.split("C");
@@ -38,8 +38,8 @@ export const Hero1 = () => {
     return data;
   };
   const filterData = () => {
-    const tmpData = plainData();
-    let tmpFilteredData = plainData();
+    const tmpData = plainpData();
+    let tmpFilteredData = plainpData();
     const keys = ["title", "talent"];
     if (q.localeCompare("")) {
       tmpFilteredData = tmpData.filter(
@@ -51,17 +51,17 @@ export const Hero1 = () => {
       if (c.localeCompare("CCC")) {
         tmpFilteredData = filterDataCheckBox(tmpFilteredData);
       }
-      setPData(tmpFilteredData);
+      setData(tmpFilteredData);
     } else {
       if (c.localeCompare("CCC")) {
         tmpFilteredData = filterDataCheckBox(tmpFilteredData);
-        setPData(tmpFilteredData);
+        setData(tmpFilteredData);
       } else {
-        setPData(projectData);
+        setData(projectData);
       }
     }
     console.log("pData");
-    console.log(pData);
+    console.log(data);
   };
   useEffect(() => {
     setSearchParams({ q: query[0].query, c: query[1].query });
@@ -119,12 +119,12 @@ export const Hero1 = () => {
               </div>
             )}
             <div className={HeroCSS.cards}>
-              {!pData.length ? (
+              {!data.length ? (
                 <>GAK ADA GBLK DATANYA BEGO</>
               ) : categoryProject ? (
                 <>
-                  {pData.map((data, i) => (
-                    <ProjectCard data={data} key={i} />
+                  {data.map((data, i) => (
+                    <ProjectCard data={data} isLoggedIn={false} key={i} />
                   ))}
                 </>
               ) : (

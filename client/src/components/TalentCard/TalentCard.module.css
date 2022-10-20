@@ -7,11 +7,20 @@
 }
 .header {
   display: flex;
-  justify-content: space-between;
+}
+.identity {
   width: 100%;
 }
-.header h5 {
+.identity h5 {
   font-size: 16px;
+  color: var(--color-main-red);
+  font-weight: 700;
+}
+.identity h4 {
+  font-size: 16px;
+  font-weight: 700;
+}
+.title {
   font-weight: 700;
 }
 .displayTime {
@@ -36,14 +45,17 @@
 .detail p {
   font-size: 14px;
 }
-.detail p:first-child {
+
+.detail p:last-child {
+  color: var(--color-font-disabled)
+}
+
+.rating {
   font-weight: 700;
 }
 
-.verified {
-  display: flex;
-  align-items: center;
-  column-gap: 0.4rem;
+.context {
+  width: 80%;
 }
 
 .skills {
@@ -55,6 +67,17 @@
 .mobileDisplay {
   display: none;
 }
+.description {
+  display: flex;
+  column-gap: 6em;
+}
+
+.container {
+  display: flex;
+  height: fit-content;
+  width: fit-content;
+}
+
 /* Tablet */
 @media screen and (max-width: 769px) {
   .card {

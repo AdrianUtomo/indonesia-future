@@ -14,7 +14,7 @@ export const Hero1 = ({ }) => {
       <div className={HeroCSS.hero}>
       <div>
           {data.map((data, i) => (
-            <TalentCard data={data} key={i} />
+            <TalentCard data={data} key={i} browseCategory={true} />
           ))}
       </div>
       </div>

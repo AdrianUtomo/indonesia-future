@@ -6,7 +6,9 @@ import { FilterDropDown } from "../../FilterDropDown";
 import { useState } from "react";
 import { Select } from "@chakra-ui/react";
 import { ProjectCard } from "../../ProjectCard";
+import { TalentCard } from "../../TalentCard";
 import { projectData } from "../../../dummyData/projectData";
+import { talentData } from "../../../dummyData/talentData";
 import { useContext } from "react";
 import { ProjectTalentContext } from "../../../context/ProjectTalentContext";
 import { useSearchParams } from "react-router-dom";
@@ -15,8 +17,9 @@ import { Pagination } from "../../Pagination";
 export const Hero1 = () => {
   const [searchParams, setSearchParams] = useSearchParams();
   const [categoryProject, setCategoryProject] = useState(true);
-  const { pData, query, plainpData } = useContext(ProjectTalentContext);
-  const [data, setData] = useState(pData);
+  const { pData, tData, query, plainpData, plaintData } = useContext(ProjectTalentContext);
+  const [ currPData, setProjectData] = useState(pData);
+  const [ currTData , setTalentData] = useState(tData);
   const q = searchParams.get("q") || "";
   const c = searchParams.get("c") || "";
   const cSplitted = c.split("C");
@@ -51,17 +54,17 @@ export const Hero1 = () => {
       if (c.localeCompare("CCC")) {
         tmpFilteredData = filterDataCheckBox(tmpFilteredData);
       }
-      setData(tmpFilteredData);
+      setProjectData(tmpFilteredData);
     } else {
       if (c.localeCompare("CCC")) {
         tmpFilteredData = filterDataCheckBox(tmpFilteredData);
-        setData(tmpFilteredData);
+        setProjectData(tmpFilteredData);
       } else {
-        setData(projectData);
+        setProjectData(projectData);
       }
     }
-    console.log("pData");
-    console.log(data);
+    //console.log("pData");
+    //console.log(currPData);
   };
   useEffect(() => {
     setSearchParams({ q: query[0].query, c: query[1].query });
@@ -79,10 +82,18 @@ export const Hero1 = () => {
             <div className={HeroCSS.filters}>
               <FilterDropDown KategoriFilter={"Location"} />
               <FilterDropDown KategoriFilter={"Category"} />
+              { categoryProject ? (
               <FilterDropDown
                 KategoriFilter={"Project Duration"}
                 checkBoxType={true}
-              />
+              />): 
+
+              (<FilterDropDown
+              KategoriFilter={"Rating"}
+              checkBoxType={true}
+              />)
+              
+              }
             </div>
           </div>
           <div className={HeroCSS.mainBar}>
@@ -119,16 +130,24 @@ export const Hero1 = () => {
               </div>
             )}
             <div className={HeroCSS.cards}>
-              {!data.length ? (
-                <>GAK ADA GBLK DATANYA BEGO</>
-              ) : categoryProject ? (
+              { categoryProject ? (
+                !currPData.length ? (
+                  <>No data</>
+                ) : 
                 <>
-                  {data.map((data, i) => (
+                  {currPData.map((data, i) => (
                     <ProjectCard data={data} isLoggedIn={false} key={i} />
                   ))}
                 </>
               ) : (
-                <>Talent</>
+                !currTData.length ? (
+                  <>No data</>
+                ) : 
+                <>
+                    {currTData.map((data, i) => (
+                    <TalentCard data={data} browseCategory={false} key={i} />
+                  ))}
+                </>
               )}
             </div>
             <div className={HeroCSS.bottomBar}>

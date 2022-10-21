@@ -7,7 +7,7 @@ import bookmark from "../../assets/star_white.png"
 import { NavLinkButton } from "../NavLinkButton";
 import image from "../../assets/avatar/michael.png"
 
-export const TalentCard = ({ data }) => {
+export const TalentCard = ({ data, browseCategory }) => {
   const {
     name,
     title,
@@ -36,14 +36,17 @@ export const TalentCard = ({ data }) => {
       </div>
       <div className={TCSS.description}>
         <div className={TCSS.context}>{parse(description)}</div>
+        {browseCategory ?
         <div className={TCSS.container}>
           <NavLinkButton
               color={"red"}
               path={"/see-more"}
               name={"See More"}
             />
-        </div>
+        </div> : <div></div>
+        }
       </div>
+      <h1>Skills</h1>
       <div className={TCSS.skills}>
         {skills.map((skill, i) => (
           <SkillTag skill={skill} key={i} />

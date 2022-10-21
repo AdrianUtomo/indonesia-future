@@ -23,26 +23,37 @@ export const Hero1 = () => {
   const q = searchParams.get("q") || "";
   const c = searchParams.get("c") || "";
   const cSplitted = c.split("C");
+  console.log(cSplitted);
   const listPage = [1, 2, 3, 4, 5];
   const filterDataCheckBox = (data) => {
-    const tmpDuration = [
-      "Less than 1 Month",
-      "1 to 3 Months",
-      "3 to 6 Months",
-      "More than 6 Months",
-    ];
+    var option;
+    if(categoryProject) {
+      option = [
+        "Less than 1 Month",
+        "1 to 3 Months",
+        "3 to 6 Months",
+        "More than 6 Months",
+      ];
     data = data.filter(
       (item) =>
-        !item.duration.localeCompare(cSplitted[0] ? tmpDuration[0] : "") ||
-        !item.duration.localeCompare(cSplitted[1] ? tmpDuration[1] : "") ||
-        !item.duration.localeCompare(cSplitted[2] ? tmpDuration[2] : "") ||
-        !item.duration.localeCompare(cSplitted[3] ? tmpDuration[3] : "")
+        !item.duration.localeCompare(cSplitted[0] ? option[0] : "") ||
+        !item.duration.localeCompare(cSplitted[1] ? option[1] : "") ||
+        !item.duration.localeCompare(cSplitted[2] ? option[2] : "") ||
+        !item.duration.localeCompare(cSplitted[3] ? option[3] : "")
     );
     return data;
+    } else {
+    data = data.filter(
+      (item) =>
+        item.rating >= (cSplitted[2] ? (cSplitted[1] ? 4.5 : 4) : (cSplitted[1] ? 4.5 : 0))
+    );
+    return data;
+    }
   };
   const filterData = () => {
-    const tmpData = plainpData();
-    let tmpFilteredData = plainpData();
+    var tmpData, tmpFilteredData;
+    tmpData = categoryProject ? plainpData() : plaintData();
+    tmpFilteredData = categoryProject? plainpData() : plaintData();
     const keys = ["title", "talent"];
     if (q.localeCompare("")) {
       tmpFilteredData = tmpData.filter(
@@ -54,18 +65,15 @@ export const Hero1 = () => {
       if (c.localeCompare("CCC")) {
         tmpFilteredData = filterDataCheckBox(tmpFilteredData);
       }
-      setProjectData(tmpFilteredData);
+      categoryProject ? setProjectData(tmpFilteredData) : setTalentData(tmpFilteredData);
     } else {
       if (c.localeCompare("CCC")) {
         tmpFilteredData = filterDataCheckBox(tmpFilteredData);
-        setProjectData(tmpFilteredData);
+        categoryProject ? setProjectData(tmpFilteredData) : setTalentData(tmpFilteredData);
       } else {
-        setProjectData(projectData);
+        categoryProject ? setProjectData(projectData) : setTalentData(talentData);
       }
-    }
-    //console.log("pData");
-    //console.log(currPData);
-  };
+    }  };
   useEffect(() => {
     setSearchParams({ q: query[0].query, c: query[1].query });
   }, [query]);

@@ -9,8 +9,8 @@ import image from "../../assets/avatar/michael.png"
 
 export const TalentCard = ({ data, browseCategory }) => {
   const {
-    name,
     title,
+    talent,
     location,
     rating,
     projectAmount,
@@ -22,11 +22,11 @@ export const TalentCard = ({ data, browseCategory }) => {
       <div className={TCSS.header}>
         <img src={image}></img>
         <div className={TCSS.identity}>
-          <h5>{name}</h5>
-          <h4>{title}</h4>
+          <h5>{title}</h5>
+          <h4>{talent}</h4>
           <div className={TCSS.detail}>
           <p>{location}</p>
-          <span><img src={star}></img></span><p className={TCSS.rating}>{rating}</p>
+          <span><img src={star}></img></span><p className={TCSS.rating}>{rating}/5</p>
           <p>({projectAmount} projects)</p>
           </div>
         </div>

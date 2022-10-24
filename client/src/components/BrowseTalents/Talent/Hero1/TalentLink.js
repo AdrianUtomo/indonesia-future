@@ -32,7 +32,7 @@ export const talentLink = {
     },
     {
       name: "Graphic Designers",
-      path: "/talent-result",
+      path: "",
     },
     {
       name: "Web Designers",

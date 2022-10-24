@@ -44,6 +44,7 @@ export const Hero3 = () => {
             <CategoryLinkButton
               name={skill.name} key={i}
               path={"/browse-talents/category/" + skill.path}
+              state={{name:""}}
             />
           ))}
         </div>

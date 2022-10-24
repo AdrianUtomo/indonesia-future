@@ -7,6 +7,7 @@
   max-width: 200px;
   display: flex;
   align-items: center;
+  color: var(--color-main-black)
 }
 .container form {
   display: flex;

@@ -26,13 +26,17 @@
 .categories {
   display: flex;
   align-items: center;
-  color: var(--text-text-secondary);
+  color: var(--text-color-red);
   font-weight: 600;
   column-gap: 0.4rem;
+}
+.categories:last-child {
+  color: var(--text-text-secondary);
 }
 .categories p:first-child {
   color: var(--text-color-red);
 }
+
 .doubleArrow {
   display: flex;
   font-size: 0.8rem;

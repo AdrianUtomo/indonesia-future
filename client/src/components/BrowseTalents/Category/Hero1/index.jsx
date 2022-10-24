@@ -29,7 +29,7 @@ const Hero1 = () => {
         </div>
         <div className={HeroCSS.listCategory}>
           {category.map((item, i) => (
-            <CategoryLinkButton name={item.name} key={i} path={item.path} />
+            <CategoryLinkButton name={item.name} key={i} path={item.path} state={{name:""}} />
           ))}
         </div>
       </div>

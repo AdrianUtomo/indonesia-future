@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import HeroCSS from "./Hero.module.css";
 import { CategoryLinkButton } from "../../../CategoryLinkButton";
 import { title, talentLink } from "./TalentLink";
@@ -19,7 +19,7 @@ export const Hero1 = ({ talent }) => {
         </div>
         <div className={HeroCSS.listCategory}>
           {talents[talent].map((item, i) => (
-            <CategoryLinkButton name={item.name} key={i} path={item.path} />
+            <CategoryLinkButton name={item.name} key={i} path={'/talent-result'} state={{name:[titleCategory,item.name]}} />
           ))}
         </div>
       </div>

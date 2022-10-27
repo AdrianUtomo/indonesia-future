@@ -1,8 +1,9 @@
-import React from "react";
+import { getElementById } from "domutils";
+import React, { useEffect, useState } from "react";
 import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
 import PCSS from "./Pagination.module.css";
-export const Pagination = () => {
-  const pageNumbers = [1, 2, 3, 4, 5];
+
+export const Pagination = ({pageNumbers, page, func}) => {
   return (
     <div className={PCSS.container}>
       <button className={PCSS.prevPage}>
@@ -10,9 +11,11 @@ export const Pagination = () => {
         <p>Previous</p>
       </button>
       <div className={PCSS.pointPages}>
-        {pageNumbers.map((page) => (
-          <a href="">{page}</a>
-        ))}
+        {
+          pageNumbers.map((number) => (
+          <button id={`page`+number} onClick={() => func(number)} href="">{number}</button>
+        ))
+        }
       </div>
       <button className={PCSS.nextPage}>
         <p>Next</p>

@@ -5,7 +5,7 @@ import { useLocation } from "react-router-dom"
 import { ProjectTalentContext } from "../../../../context/ProjectTalentContext";
 import { AiOutlineDoubleRight } from "react-icons/ai";
 
-export const Hero1 = ({ talent }) => {
+export const Hero1 = () => {
   const { tData } = useContext(ProjectTalentContext);
   const [data] = useState(tData);
   const location = useLocation();

@@ -3,7 +3,7 @@ import { SearchBar } from "../SearchBar";
 import HeroCSS from "./Hero.module.css";
 import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
 import { FilterDropDown } from "../../FilterDropDown";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Select } from "@chakra-ui/react";
 import { ProjectCard } from "../../ProjectCard";
 import { TalentCard } from "../../TalentCard";
@@ -11,20 +11,34 @@ import { projectData } from "../../../dummyData/projectData";
 import { talentData } from "../../../dummyData/talentData";
 import { useContext } from "react";
 import { ProjectTalentContext } from "../../../context/ProjectTalentContext";
-import { useSearchParams } from "react-router-dom";
-import { useEffect } from "react";
+import { useNavigate, useParams, useSearchParams } from "react-router-dom";
 import { Pagination } from "../../Pagination";
+
 export const Hero1 = () => {
   const [searchParams, setSearchParams] = useSearchParams();
+  //console.log(params.split("/search"))
+  const navigate = useNavigate();
   const [categoryProject, setCategoryProject] = useState(true);
   const { pData, tData, query, plainpData, plaintData } = useContext(ProjectTalentContext);
   const [ currPData, setProjectData] = useState(pData);
   const [ currTData , setTalentData] = useState(tData);
+  var page = useParams().page;
   const q = searchParams.get("q") || "";
   const c = searchParams.get("c") || "";
+  console.log(useParams())
   const cSplitted = c.split("C");
-  console.log(cSplitted);
-  const listPage = [1, 2, 3, 4, 5];
+  const pageNumbers = [1,2,3,4,5]
+  const changePage = (newPage) => {
+    navigate(`/search/${newPage}?q=&c=CCC`)
+    pageNumbers.map((page) => (
+      page = document.getElementById(`page`+page),
+      page.style.color = "var(--color-main-red)",
+      page.style.backgroundColor = "var(--color-main-white)"
+    ))
+    var currPage = document.getElementById(`page`+newPage);
+    currPage.style.color = "var(--color-main-white)"
+    currPage.style.backgroundColor = "var(--color-main-red)"
+  }
   const filterDataCheckBox = (data) => {
     var option;
     if(categoryProject) {
@@ -51,31 +65,41 @@ export const Hero1 = () => {
     }
   };
   const filterData = () => {
-    var tmpData, tmpFilteredData;
-    tmpData = categoryProject ? plainpData() : plaintData();
-    tmpFilteredData = categoryProject? plainpData() : plaintData();
+    var tmpPData, tmpFilteredPData, tmpTData, tmpFilteredTData;
+    tmpPData = plainpData();
+    tmpFilteredPData = plainpData();
+    tmpTData = plaintData();
+    tmpFilteredTData = plaintData();
     const keys = ["title", "talent"];
     if (q.localeCompare("")) {
-      tmpFilteredData = tmpData.filter(
+      tmpFilteredPData = tmpPData.filter(
+        (item) =>
+          keys.some((key) =>
+            item[key].toLowerCase().includes(q.toLowerCase())
+          ) || item.skills.includes(q)
+      );
+      tmpFilteredTData = tmpTData.filter(
         (item) =>
           keys.some((key) =>
             item[key].toLowerCase().includes(q.toLowerCase())
           ) || item.skills.includes(q)
       );
       if (c.localeCompare("CCC")) {
-        tmpFilteredData = filterDataCheckBox(tmpFilteredData);
+        tmpFilteredPData = filterDataCheckBox(tmpFilteredPData);
+        tmpFilteredTData = filterDataCheckBox(tmpFilteredTData);
       }
-      categoryProject ? setProjectData(tmpFilteredData) : setTalentData(tmpFilteredData);
+      setProjectData(tmpFilteredPData); setTalentData(tmpFilteredTData);
     } else {
       if (c.localeCompare("CCC")) {
-        tmpFilteredData = filterDataCheckBox(tmpFilteredData);
-        categoryProject ? setProjectData(tmpFilteredData) : setTalentData(tmpFilteredData);
+        tmpFilteredPData = filterDataCheckBox(tmpFilteredPData);
+        setProjectData(tmpFilteredPData); setTalentData(tmpFilteredPData);
       } else {
-        categoryProject ? setProjectData(projectData) : setTalentData(talentData);
+        setProjectData(projectData); setTalentData(talentData);
       }
     }  };
   useEffect(() => {
     setSearchParams({ q: query[0].query, c: query[1].query });
+    // setPageParams({page: 1});
   }, [query]);
   useEffect(() => {
     filterData();
@@ -138,7 +162,7 @@ export const Hero1 = () => {
               </div>
             )}
             <div className={HeroCSS.cards}>
-              { categoryProject ? (
+            { categoryProject ? (
                 !currPData.length ? (
                   <>No data</>
                 ) : 
@@ -168,7 +192,7 @@ export const Hero1 = () => {
                 </div>
               </div>
               <div className={HeroCSS.changePage}>
-                <Pagination />
+                <Pagination pageNumbers={pageNumbers} page={page} func={changePage} />
               </div>
             </div>
           </div>

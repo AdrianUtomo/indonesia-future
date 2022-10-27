@@ -67,4 +67,17 @@ export const projectData = [
     numberOfApplicants: "0 to 5",
     clientVerified: true,
   },
+  {
+    id: 6,
+    title: "UI/UX Designer for E-Commerce Website",
+    postedDate: d,
+    talent: "Creative & Design",
+    duration: "1 to 3 Months",
+    workRemote: "Remote-On-Site",
+    location: "Jakarta, Indonesia",
+    description: `<p>Designing for an e-commerce website for a company, have to work directly to the project manager, you need some skills and some requirements for this project. </br>You must have:</p>`,
+    skills: ["UI Design", "Figma", "Web Design", "UI/UX Design"],
+    numberOfApplicants: "0 to 5",
+    clientVerified: true,
+  },
 ];

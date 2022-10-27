@@ -17,7 +17,7 @@ export const SearchBar = () => {
       )
     );
     setQuery("");
-    navigate("/search", 
+    navigate("/search/1", 
       {state:{query}}
     )
   };

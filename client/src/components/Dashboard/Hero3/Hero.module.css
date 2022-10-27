@@ -44,6 +44,13 @@
   color: var(--color-main-white);
 }
 
+.bottomBar {
+  display: flex;
+  align-self: flex-start;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
 
 /* Tablet */
 @media screen and (max-width: 769px) {

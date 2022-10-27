@@ -9,16 +9,12 @@
   display: flex;
   column-gap: 0.7rem;
 }
-.pointPages a {
+.pointPages button {
   display: flex;
   justify-content: center;
   width: 20px;
   font-weight: 600;
   font-size: var(--dekstop-text-s-size);
-}
-.pointPages a:first-child {
-  background-color: var(--color-main-red);
-  color: var(--color-main-white);
 }
 .changePage button {
   display: flex;
@@ -36,4 +32,8 @@
 }
 .changePage button:first-child {
   color: var(--strokes-color);
+}
+.pointPages button:first-child {
+  color: var(--color-main-white);
+  background-color: var(--color-main-red)
 }

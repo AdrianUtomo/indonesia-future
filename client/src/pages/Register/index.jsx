@@ -4,7 +4,7 @@ import facebook from "../../assets/facebook.png";
 import google from "../../assets/google.png";
 import axios from 'axios';
 import { NavLink, useLocation, useNavigate } from "react-router-dom";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import 'font-awesome/css/font-awesome.min.css';
 
 export const Register = () => {
@@ -18,6 +18,15 @@ export const Register = () => {
   const [values, setValues] = useState({firstname:"", lastname:"", email:"", password:"",retyped_password:""})
   const [errors, setErrors] = useState({})
   const [errorMessage, setErrorMessage] = useState("")
+  const [filled, setFilled] = useState(false);
+  const checkFilled =() => {
+    if (Object.values(values).every(value => value!="") && !filled) {
+      setFilled(true)
+    }
+    else if (!Object.values(values).every(value => value!="") && filled) {
+      setFilled(false)
+    }
+  };
   const togglePassword =()=>{
     if(passwordType==="password")
     {
@@ -76,7 +85,9 @@ export const Register = () => {
     if(occupation=="Client") {
     axios.post('http://localhost:8080/api/client/', userObject)
         .then((res) => {
-          navigate('/email-verification');
+          navigate('/email-verification',
+          {state:userObject[email]}
+          );
         }).catch((error) => {
             console.log(error)
         });
@@ -126,7 +137,13 @@ return (
         </div>
         <div className={RegisterCSS.agree}>By clicking Agree &amp; Create Account, you agree to IndonesiaTalent <NavLink to={"/term-of-use"} className={RegisterCSS.link}>Term of Use</NavLink>, <NavLink to={"/user-agreement"} className={RegisterCSS.link}>User Agreement</NavLink>, and <NavLink to={"/privacy-policy"} className={RegisterCSS.link}>Privacy Policy</NavLink></div> 
         <div>
-        <input className={RegisterCSS.button} type="submit" name="Create account"></input>
+          {checkFilled()}
+          {filled ? (
+            <button className={RegisterCSS.button} style={{backgroundColor:"var(--color-main-red)"}} type="submit">Create Account</button>
+          ) :
+          (
+            <button className={RegisterCSS.button} style={{backgroundColor:"var(--strokes-color)"}} type="submit">Create Account</button>
+          )}
         <span
           style={{
             fontWeight: "bold",

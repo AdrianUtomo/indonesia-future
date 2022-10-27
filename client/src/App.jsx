@@ -30,7 +30,7 @@ function App() {
         <Route path="/sign-up" element={<Join/>}/>
         <Route path="/register" element={<Register/>}/>
         <Route path="/forgot-password" element={<ForgotPassword/>}/>
-        <Route path="/search" element={<SearchPage/>}/>
+        <Route path="/search/:page" element={<SearchPage/>}/>
         <Route path="/email-verification" element={<EmailVerification/>}/>
         <Route path="/profile" element={<Profile/>}/>
         <Route path="/dashboard" element={<Dashboard/>}/>

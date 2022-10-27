@@ -16,6 +16,13 @@
     border-radius: 12px;
     width: 120%;
   }
+
+  .center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;  
+  }
   
   .title {
     font-size: 32px;

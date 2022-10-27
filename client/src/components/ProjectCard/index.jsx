@@ -3,8 +3,11 @@ import PCSS from "./ProjectCard.module.css";
 import moment from "moment";
 import parse from "html-react-parser";
 import { HiOutlineClock } from "react-icons/hi";
+import verified  from "../../assets/verified.png"
+import bookmark  from "../../assets/star_white.png"
+
 import { SkillTag } from "../SkillTag";
-export const ProjectCard = ({ data }) => {
+export const ProjectCard = ({ data, isLoggedIn }) => {
   const {
     title,
     postedDate,
@@ -14,6 +17,8 @@ export const ProjectCard = ({ data }) => {
     location,
     description,
     skills,
+    numberOfApplicants,
+    clientVerified,
   } = data;
   moment.relativeTimeThreshold("ss", 0);
   return (
@@ -21,6 +26,7 @@ export const ProjectCard = ({ data }) => {
       <div className={PCSS.header}>
         <h5>{title}</h5>
         <div className={PCSS.displayTime}>
+          {isLoggedIn? <img src={bookmark}></img> : <div></div>}
           <HiOutlineClock className={PCSS.icon} />
           <p>{moment(postedDate).fromNow()}</p>
         </div>
@@ -43,6 +49,11 @@ export const ProjectCard = ({ data }) => {
           <SkillTag skill={skill} key={i} />
         ))}
       </div>
+      {isLoggedIn? <div>Number of Applicants: <b>{numberOfApplicants}</b>
+      <div>{clientVerified? <div className={PCSS.verified}><img src={verified}></img><p>Client Verified</p></div>: <div></div>}</div>
+        </div> 
+        : <div></div>
+      }
     </div>
   );
 };

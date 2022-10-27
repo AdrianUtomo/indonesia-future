@@ -10,6 +10,8 @@ export const projectData = [
     location: "Jakarta, Indonesia",
     description: `<p>Designing for an e-commerce website for a company, have to work directly to the project manager, you need some skills and some requirements for this project. </br>You must have:</p>`,
     skills: ["UI Design", "Figma", "Web Design", "UI/UX Design"],
+    numberOfApplicants: "0 to 5",
+    clientVerified: true,
   },
   {
     id: 2,
@@ -22,6 +24,8 @@ export const projectData = [
     description:
       "<p>Designing for an e-commerce website for a company, have to work directly to the project manager, you need some skills and some requirements for this project. </br>You must have:</p>",
     skills: ["React JS", "CSS", "Tailwind CSS", "HTML"],
+    numberOfApplicants: "0 to 5",
+    clientVerified: true,
   },
   {
     id: 3,
@@ -34,6 +38,8 @@ export const projectData = [
     description:
       "<p>Designing for an e-commerce website for a company, have to work directly to the project manager, you need some skills and some requirements for this project. </br>You must have:</p>",
     skills: ["React JS", "CSS", "Tailwind CSS", "HTML"],
+    numberOfApplicants: "0 to 5",
+    clientVerified: true,
   },
   {
     id: 4,
@@ -45,6 +51,8 @@ export const projectData = [
     location: "Jakarta, Indonesia",
     description: `<p>Designing for an e-commerce website for a company, have to work directly to the project manager, you need some skills and some requirements for this project. </br>You must have:</p>`,
     skills: ["UI Design", "Figma", "Web Design", "UI/UX Design"],
+    numberOfApplicants: "0 to 5",
+    clientVerified: true,
   },
   {
     id: 5,
@@ -56,5 +64,7 @@ export const projectData = [
     location: "Jakarta, Indonesia",
     description: `<p>Designing for an e-commerce website for a company, have to work directly to the project manager, you need some skills and some requirements for this project. </br>You must have:</p>`,
     skills: ["UI Design", "Figma", "Web Design", "UI/UX Design"],
+    numberOfApplicants: "0 to 5",
+    clientVerified: true,
   },
 ];

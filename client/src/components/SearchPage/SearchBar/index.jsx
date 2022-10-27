@@ -5,8 +5,11 @@ import { useState, useEffect } from "react";
 import { useSearchParams } from "react-router-dom";
 import { useContext } from "react";
 import { ProjectTalentContext } from "../../../context/ProjectTalentContext";
+import { useLocation } from "react-router-dom";
+
 export const SearchBar = () => {
   const ProjectTalentC = useContext(ProjectTalentContext);
+  const location = useLocation();
   const [query, setQuery] = useState("");
   const handleSubmit = (e) => {
     e.preventDefault();

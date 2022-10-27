@@ -14,7 +14,7 @@ import { Talents } from "./pages/BrowseTalents/Talent";
 import { SearchPage } from "./pages/Search";
 import { Profile } from "./pages/Profile";
 import { Dashboard } from "./pages/Dashboard";
-
+import { TalentResult } from "./pages/BrowseTalents/TalentResult";
 
 function App() {
   return (
@@ -30,9 +30,11 @@ function App() {
         <Route path="/sign-up" element={<Join/>}/>
         <Route path="/register" element={<Register/>}/>
         <Route path="/forgot-password" element={<ForgotPassword/>}/>
+        <Route path="/search" element={<SearchPage/>}/>
         <Route path="/email-verification" element={<EmailVerification/>}/>
         <Route path="/profile" element={<Profile/>}/>
         <Route path="/dashboard" element={<Dashboard/>}/>
+        <Route path="/talent-result" element={<TalentResult/>}/>
       </Routes>
     </div>
   );

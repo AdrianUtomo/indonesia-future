@@ -9,7 +9,7 @@ export const FilterDropDown = ({
   KategoriFilter,
   checkBoxType,
 }) => {
-  const checkBoxs = [
+  const checkBoxDuration = [
     {
       id: 1,
       name: "Less than 1 Month",
@@ -34,10 +34,30 @@ export const FilterDropDown = ({
       value: "4",
       checked: false,
     },
+  ]
+    const checkBoxRating = [
+      {
+        id: 1,
+        name: "Any",
+        value: "1",
+        checked: false,
+      },
+      {
+        id: 2,
+        name: "Above 4.5",
+        value: "2",
+        checked: false,
+      },
+      {
+        id: 3,
+        name: "4 up to 4.5",
+        value: "3",
+        checked: false,
+      },
   ];
   const ProjecTalentC = useContext(ProjectTalentContext);
   const [isActive, setIsActive] = useState(true);
-  const [query, setQuery] = useState(checkBoxs);
+  var [query, setQuery] = useState(checkBoxDuration);
   const handleClick = (e, index) => {
     setQuery(
       query.map((item, i) => {
@@ -85,7 +105,8 @@ export const FilterDropDown = ({
         {checkBoxType ? (
           <div className={FDDCSS.containerCheckBox}>
             <form>
-              {checkBoxs.map((box, i) => (
+              { KategoriFilter=="Project Duration" ? (
+              checkBoxDuration.map((box, i) => (
                 <div
                   className={FDDCSS.inputCheckBox}
                   onClick={(e) => handleClick(e, i + 1)}
@@ -99,7 +120,24 @@ export const FilterDropDown = ({
                   />
                   <label for={i}>{box.name}</label>
                 </div>
-              ))}
+              ))) : 
+
+              (checkBoxRating.map((box, i) => (
+                <div
+                  className={FDDCSS.inputCheckBox}
+                  onClick={(e) => handleClick(e, i + 1)}
+                  key={i}
+                >
+                  <input
+                    type="checkbox"
+                    name={box.name}
+                    id={i}
+                    value={box.value}
+                  />
+                  <label for={i}>{box.name}</label>
+                </div>
+              )))
+            }
             </form>
           </div>
         ) : (

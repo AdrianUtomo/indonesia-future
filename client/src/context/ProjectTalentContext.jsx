@@ -1,4 +1,5 @@
 import { projectData } from "../dummyData/projectData";
+import { talentData } from "../dummyData/talentData";
 import React, { useContext, useState, createContext } from "react";
 export const ProjectTalentContext = createContext({});
 
@@ -14,16 +15,23 @@ export function ProjectTalentProvider({ children }) {
     },
   ];
   const [query, setQuery] = useState(templateQuery);
-  const [data, setData] = useState(projectData);
-  const resetData = () => {
-    setData(projectData);
+  const [pData, setpData] = useState(projectData);
+  const [tData, settData] = useState(talentData);
+  const resetpData = () => {
+    setpData(projectData);
   };
-  const plainData = () => {
+  const plainpData = () => {
     return projectData;
+  };
+  const resettData = () => {
+    setpData(talentData);
+  };
+  const plaintData = () => {
+    return talentData;
   };
   return (
     <ProjectTalentContext.Provider
-      value={{ data, query, setQuery, resetData, setData, plainData }}
+      value={{ pData, tData, query, setQuery, resetpData, setpData, plainpData, settData, plaintData }}
     >
       {children}
     </ProjectTalentContext.Provider>

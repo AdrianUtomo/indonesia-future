@@ -1,0 +1,151 @@
+{
+	"info": {
+		"_postman_id": "a0bd2d1c-5b9a-4f18-839a-25d00c379e0d",
+		"name": "indonesia-future-client",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "15333745"
+	},
+	"item": [
+		{
+			"name": "Client register",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"firstname\" : \"Test 1\",\r\n    \"lastname\" : \"Test 2\",\r\n    \"email\" : \"rehaganak@gmail.com\",\r\n    \"password\" : \"32rkcsembiring\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/client",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"client"
+					]
+				},
+				"description": "This is API for registration, if registration is success it will send response \"success\" with 200 http status code. And the email will receive verification email, which if being pushed will set the attribute active to be  \n\"true\"."
+			},
+			"response": []
+		},
+		{
+			"name": "Delete All Client",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/client",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"client"
+					]
+				},
+				"description": "API to delete all the client inside the table"
+			},
+			"response": []
+		},
+		{
+			"name": "Get All Client",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/client",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"client"
+					]
+				},
+				"description": "API to get all the client information from the client table"
+			},
+			"response": []
+		},
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\" : \"rehaganak@gmail.com\",\r\n    \"password\" : \"32Rkcsembiring\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/client/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"client",
+						"login"
+					]
+				},
+				"description": "API for login. The body is email and password. If the login success it will return the jwt token."
+			},
+			"response": []
+		},
+		{
+			"name": "Email Verification",
+			"request": {
+				"auth": {
+					"type": "oauth2",
+					"oauth2": [
+						{
+							"key": "addTokenTo",
+							"value": "header",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/client/verify-email/?email=ISIEMAILDISINI",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"client",
+						"verify-email",
+						""
+					],
+					"query": [
+						{
+							"key": "email",
+							"value": "ISIEMAILDISINI"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

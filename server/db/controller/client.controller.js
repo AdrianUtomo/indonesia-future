@@ -100,3 +100,20 @@ exports.verifyEmail = (req,res) => {
     res.send("Update Complete")
 }
 
+exports.sendEmail = (req,res) => {
+    const email = req.body.email
+    const result = sendEmail.sendEmailClient(email) 
+    if(result == 0){
+        res.send("Error")
+    } else {
+        Client.findOne({where: {email: email}})
+            .then(() => {
+                res.send("Success send Email")
+            })
+            .catch(err => {
+                console.log('ERROR')
+                res.send("Email not registered")
+            })
+    }
+}
+

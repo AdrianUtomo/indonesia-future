@@ -100,3 +100,20 @@ exports.verifyEmail = (req,res) => {
     Freelancer.update({active: true}, {where: {email: email}})
     res.send("Update Complete")
 }
+
+exports.sendEmail = (req,res) => {
+    const email = req.body.email;
+    const result = sendEmail.sendEmailFreelancer(email) 
+    if(result == 0){
+        res.send("Error")
+    } else {
+        Freelancer.findOne({where: {email: email}})
+            .then(() => {
+                res.send("Success send Email")
+            })
+            .catch(err => {
+                console.log('ERROR')
+                res.send("Email not registered")
+            })
+    }
+}

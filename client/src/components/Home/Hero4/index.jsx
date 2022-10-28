@@ -40,7 +40,7 @@ export const Hero4 = () => {
           </div>
         </div>
         <div className={HeroCSS.partners}>
-          <h2>Our Last Parners</h2>
+          <h2>Our Last Partners</h2>
           <SliderHome />
         </div>
       </div>

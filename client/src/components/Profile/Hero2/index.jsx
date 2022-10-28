@@ -12,7 +12,7 @@ export const Hero2 = ({ title, content, link }) => {
         </div>
         <div className={HeroCSS.content}>
           <p>{content}</p>
-          <NavLink to={"/resume"} className={HeroCSS.link}>{link}</NavLink>
+          <NavLink to={link.replaceAll(" ","-")} className={HeroCSS.link}>{link}</NavLink>
         </div>
       </div>
     </div>

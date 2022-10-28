@@ -13,6 +13,7 @@
   justify-content: space-evenly;
   align-items: center;
   text-align: center;
+  padding: 8rem 0 0 0;
 }
 .content {
   display: inline-block;

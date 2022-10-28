@@ -41,7 +41,6 @@
   align-items: center;
   padding: 60px;
 }
-
 .button {
   display: flex;
   align-self: flex-start;
@@ -51,6 +50,7 @@
 }
 .link {
   text-decoration: none;
+  color: var(--color-main-red);
 }
 /* Tablet */
 @media screen and (max-width: 769px) {

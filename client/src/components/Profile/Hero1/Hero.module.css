@@ -4,9 +4,7 @@
 }
 .hero {
   min-height: 50vh;
-  display: inline-block;
-  column-count: 2;
-  align-items: left;
+  display: flex;
   justify-content: center;
   text-align: left;
   color: var(--text-color-white);
@@ -15,7 +13,7 @@
   max-width: 1280px;
   color: var(--color-main-white);
   border-radius: var(--border-radius-field) var(--border-radius-field) 0 0;
-  padding: 10rem 3rem 3rem 3rem;
+  padding: 5rem 3rem 3rem 3rem;
 }
 
 .hero p {
@@ -38,9 +36,10 @@
   display: inline-block;
 }
 
-.arrowIcon {
-  background-color: var(--color-main-red);
-  font-size:1em;
+.head {
+  display: flex;
+  column-count: 2;
+  column-gap: 3rem;
 }
 
 .info {
@@ -49,7 +48,6 @@
   justify-content: center;
   color: white;
 } 
-
 
 .detail {
   display: inline-block;
@@ -80,48 +78,24 @@
   border-radius: 40px;
 }
 
+.imageSection {
+  display: flex;
+}
+
 .image {
+  position: relative;
+  top: 0;
+  left: 0;
   border-radius: 50%;
 }
 
-.completeness {
-  display: inline-block;
-  justify-content: center;
-  color: white;
-  box-shadow: 0 0 1px 0 var(--color-main-black);
-  height: 13em;
-  border-radius: 12px;
-}
-
-.completeness h1 {
-  font-size: var(--dekstop-subs2-size);
-}
-
-.header {
-  color: black;
-  font-size: var(--dekstop-subs2-size);
-  font-weight: bold;
-  box-shadow: 0 0 1px 0 var(--color-main-black);
-  padding: 10px;
-  border-radius: 12px 12px 0 0;
-}
-
-.box {
-  box-shadow: 0 0 15px rgba(0, 0, 0, 0.05);
-  border-color: transparent;
-  border: 2px solid #dddddd;
-  border-radius: 12px;
-  padding: 5px;
-  background: linear-gradient(to right, var(--color-main-red) 16%, #D7D7D7 16%);
-}
-
-.add {
-  box-shadow: 0 0 15px rgba(0, 0, 0, 0.05);
-  border-color: transparent;
-  border: 2px solid #dddddd;
-  border-radius: 12px;
-  padding: 1vw;
-  margin: 1vw;
+.editImage {
+  position: relative;
+  right: 2em;
+  top: 1em;
+  scale: 1.5;
+  background-color: var(--color-main-red);
+  border-radius: 50%;
 }
 
 .linkLogoSagara {

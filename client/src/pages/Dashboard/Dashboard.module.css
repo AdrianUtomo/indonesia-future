@@ -9,6 +9,8 @@
   column-count: 2;
 }
 .header {
-  display: inline-block;
-  column-count: 2; 
+  justify-content: space-evenly;
+  align-items: center;
+  text-align: center;
+  padding: 8rem 0 0 0;
 }

@@ -17,7 +17,7 @@ const [freelancerPic, setFreelancerPic] = useState(freelancerGrey)
 const [buttonText, setButtonText] = useState("Create an account")
 const [occupation, setOccupation] = useState("")
 const chooseClient =()=>{
-  setButtonText('Join as client')
+  setButtonText('Join as Client')
   setClientBorderColor('#DB0A2D')
   setFreelancerBorderColor('transparent')
   setOccupation("Client")
@@ -26,7 +26,7 @@ const chooseClient =()=>{
   setFreelancerPic(freelancerGrey)
 }
 const chooseFreelancer =()=>{
-  setButtonText('Join as freelancer')
+  setButtonText('Join as Freelancer')
   setFreelancerBorderColor('#DB0A2D')
   setClientBorderColor('transparent')
   setOccupation("Freelancer")

@@ -7,8 +7,17 @@ import axios from 'axios';
 
 export const EmailVerification = () => {
 const location = useLocation();
-const email = location.state;
-// console.log(email)
+// const email = location.state;
+const occupation = location.state[0];
+const email = location.state[1];
+const sendEmail = () => {
+  axios.post(`http://localhost:8080/api/${occupation}/send-email/`, email)
+    .then((res) => {
+      console.log(1);
+      }).catch((error) => {
+      console.log(error)
+    });
+  }
 return (
     <div className={EmailVerificationCSS.content}>
         <form className={EmailVerificationCSS.form}>
@@ -16,9 +25,9 @@ return (
         <img src={mail} className={EmailVerificationCSS.center}></img>
         <div>Hello there! It’s almost done! We’ve sent an email to your email for verification, please click the link we sent for verify your email.
 Thank you</div> 
-        <button className={EmailVerificationCSS.button} style={{backgroundColor: '#DB0A2D'}}>
+        <button onClick={sendEmail} className={EmailVerificationCSS.button} style={{backgroundColor: '#DB0A2D'}}>
         Resend Email</button>
         </form>
     </div>
-  );
-};
+)
+}

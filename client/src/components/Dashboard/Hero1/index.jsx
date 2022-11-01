@@ -2,7 +2,8 @@ import HeroCSS from "./Hero.module.css";
 import React from "react";
 import imgProfile from "../../../assets/profile.png";
 import imgWave from "../../../assets/wave.png";
-import { FiEdit3, FiArrowRight } from "react-icons/fi"
+import { ProfileCompleteness } from "../../ProfileCompleteness";
+import { profileData } from "../../../dummyData/profileData";
 
 export const Hero1 = () => {
   return (
@@ -13,23 +14,12 @@ export const Hero1 = () => {
         </div>
         <div className={HeroCSS.info}>
           <h1>Good Afternoon!</h1>
-          <h1>Jane Doe</h1>
-          <p>Senior UI/UX Designer</p>
+          <h1>{JSON.stringify(profileData[0]["name"]).replaceAll("\"", "")}</h1>
+          <p>{JSON.stringify(profileData[0]["job_name"]).replaceAll("\"", "")}</p>
         </div>
         <img src={imgWave} className={HeroCSS.info}></img>
-        <div className={HeroCSS.right}>
-        <div className={HeroCSS.available}>Available</div>
         <div className={HeroCSS.completeness}>
-          <div className={HeroCSS.header}>
-          <h1>16% Profile Completeness</h1>
-          <div className={HeroCSS.box}></div>
-          </div>
-          <div className={HeroCSS.add}>
-          <p>Add your location to highlight where you're from (+8%)<br></br>
-          Add location</p>
-          <FiArrowRight className={HeroCSS.arrowIcon}/>
-          </div>
-        </div>
+          <ProfileCompleteness/>
         </div>
       </div>
       </div>

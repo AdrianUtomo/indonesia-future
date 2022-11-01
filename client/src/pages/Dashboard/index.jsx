@@ -5,7 +5,9 @@ import { Footer } from "../../components/Footer";
 export const Dashboard = () => {
   return (
     <div className={DashboardCSS.container}>
+      <div className={DashboardCSS.header}>
       <Hero1 />
+      </div>
       <Hero2/>
       <Hero3/>
       <Footer />

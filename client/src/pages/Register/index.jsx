@@ -82,24 +82,17 @@ export const Register = () => {
         email: values.email,
         password: values.password
     };
-    if(occupation=="Client") {
-    axios.post('http://localhost:8080/api/client/', userObject)
+    const email = {
+      email: values.email,
+    }
+    axios.post(`http://localhost:8080/api/${occupation}/`, userObject)
         .then((res) => {
           navigate('/email-verification',
-          {state:userObject[email]}
+          {state:[occupation, email]}
           );
         }).catch((error) => {
             console.log(error)
         });
-    }
-    else if (occupation=="Freelancer") {
-      axios.post('http://localhost:8080/api/freelancer/', userObject)
-      .then((res) => {
-        navigate('/email-verification');
-      }).catch((error) => {
-          console.log(error)
-      });
-    }
   }
 return (
     <div className={RegisterCSS.content}>
